@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import LoginSignUpPage from "./LoginSignUpPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+  
 
   return (
     <BrowserRouter>
@@ -18,7 +15,7 @@ function App() {
             <h1>Test Route</h1>
           </Route>
           <Route path="/">
-            <h1>Page Count: {count}</h1>
+            <LoginSignUpPage setUser={setUser}/>
           </Route>
         </Switch>
       </div>
