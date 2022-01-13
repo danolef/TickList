@@ -1,5 +1,5 @@
 class WorkoutExercise < ApplicationRecord
-    has_many :workout_sessions
-    has_many :workout_plans, through: :workout_sessions
+    has_many :session_exercises
+    has_many :workout_sessions, through: :session_exercises
 
 end

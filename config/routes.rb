@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :session_climbing_drills
+  resources :session_exercises
   resources :project_plans
   resources :workout_sessions
   resources :climbing_drills

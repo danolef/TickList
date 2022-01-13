@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_000314) do
+ActiveRecord::Schema.define(version: 2022_01_13_215739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,24 @@ ActiveRecord::Schema.define(version: 2022_01_13_000314) do
     t.index ["project_id"], name: "index_resources_on_project_id"
   end
 
+  create_table "session_climbing_drills", force: :cascade do |t|
+    t.bigint "workout_session_id", null: false
+    t.bigint "climbing_drill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["climbing_drill_id"], name: "index_session_climbing_drills_on_climbing_drill_id"
+    t.index ["workout_session_id"], name: "index_session_climbing_drills_on_workout_session_id"
+  end
+
+  create_table "session_exercises", force: :cascade do |t|
+    t.bigint "workout_session_id", null: false
+    t.bigint "workout_exercise_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["workout_exercise_id"], name: "index_session_exercises_on_workout_exercise_id"
+    t.index ["workout_session_id"], name: "index_session_exercises_on_workout_session_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -103,6 +121,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_000314) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["user_id"], name: "index_workout_plans_on_user_id"
   end
 
@@ -110,12 +129,9 @@ ActiveRecord::Schema.define(version: 2022_01_13_000314) do
     t.string "description"
     t.string "gym_area"
     t.bigint "workout_plan_id", null: false
-    t.bigint "workout_exercise_id"
-    t.bigint "climbing_drill_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["climbing_drill_id"], name: "index_workout_sessions_on_climbing_drill_id"
-    t.index ["workout_exercise_id"], name: "index_workout_sessions_on_workout_exercise_id"
+    t.string "name"
     t.index ["workout_plan_id"], name: "index_workout_sessions_on_workout_plan_id"
   end
 
@@ -125,8 +141,10 @@ ActiveRecord::Schema.define(version: 2022_01_13_000314) do
   add_foreign_key "projects", "climbs"
   add_foreign_key "projects", "project_lists"
   add_foreign_key "resources", "projects"
+  add_foreign_key "session_climbing_drills", "climbing_drills"
+  add_foreign_key "session_climbing_drills", "workout_sessions"
+  add_foreign_key "session_exercises", "workout_exercises"
+  add_foreign_key "session_exercises", "workout_sessions"
   add_foreign_key "workout_plans", "users"
-  add_foreign_key "workout_sessions", "climbing_drills"
-  add_foreign_key "workout_sessions", "workout_exercises"
   add_foreign_key "workout_sessions", "workout_plans"
 end

@@ -1,5 +1,5 @@
 class ClimbingDrill < ApplicationRecord
-    has_many :workout_sessions
-    has_many :workout_plans, through: :workout_sessions
+    has_many :session_climbing_drills
+    has_many :workout_sessions, through: :session_climbing_drills
 
 end

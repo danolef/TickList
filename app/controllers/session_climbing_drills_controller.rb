@@ -1,0 +1,2 @@
+class SessionClimbingDrillsController < ApplicationController
+end

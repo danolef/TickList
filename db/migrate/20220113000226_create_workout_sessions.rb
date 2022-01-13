@@ -4,9 +4,7 @@ class CreateWorkoutSessions < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :gym_area
       t.references :workout_plan, null: false, foreign_key: true
-      t.references :workout_exercise, foreign_key: true
-      t.references :climbing_drill, foreign_key: true
-
+      
       t.timestamps
     end
   end
