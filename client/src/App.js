@@ -21,11 +21,11 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/home">
-            <HomePage/>
+            <HomePage setUser={setUser}/>
           </Route>
           <Route path="/">
             {/* <LoginSignUpPage/> */}
-            {user ? <HomePage/> : <LoginSignUpPage setUser={setUser}/>}
+            {user ? <HomePage setUser={setUser}/> : <LoginSignUpPage setUser={setUser}/>}
           </Route>
         </Switch>
       </div>
