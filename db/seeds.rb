@@ -58,8 +58,27 @@ puts "🌱 Seeding Workout Plans..."
 wp1 = WorkoutPlan.create({user_id: u1.id, name: 'Leg Day', Description: "endurance for leges", Focus: "endurance"}) 
 wp2 = WorkoutPlan.create({user_id: u1.id, name: 'Back', Description: "Max strenght for the back", Focus: "max strength"}) 
 
-# puts "🌱 Seeding Workout Sessions..."
-# wp1 = WorkoutSession.create({name: "Day 1" description: "Mix of weights and climbing", , description: "endurance for leges", focus: "endurance" }) 
+puts "🌱 Seeding Workout Sessions..."
+ws1 = WorkoutSession.create({workout_plan_id: wp1.id, name: "Day 1", description: "Mix of weights and climbing", gym_area: "weight room and system board"}) 
+ws2 = WorkoutSession.create({workout_plan_id: wp1.id, name: "Day 2", description: "weights only", gym_area: "weight room"}) 
+ws3 = WorkoutSession.create({workout_plan_id: wp2.id, name: "Day 1", description: "Climbing only", gym_area: "weight room"}) 
+ws4 = WorkoutSession.create({workout_plan_id: wp2.id, name: "Day 2", description: "weights only", gym_area: "ropes and bouldering"}) 
+
+puts "🌱 Seeding session exercises..."
+se1 = SessionExercise.create({workout_session_id: ws1.id, workout_exercise_id: we1.id}) 
+se2 = SessionExercise.create({workout_session_id: ws1.id, workout_exercise_id: we2.id}) 
+se3 = SessionExercise.create({workout_session_id: ws2.id, workout_exercise_id: we1.id}) 
+se4 = SessionExercise.create({workout_session_id: ws2.id, workout_exercise_id: we2.id})
+se5 = SessionExercise.create({workout_session_id: ws4.id, workout_exercise_id: we4.id})
+se6 = SessionExercise.create({workout_session_id: ws4.id, workout_exercise_id: we5.id})
+se7 = SessionExercise.create({workout_session_id: ws4.id, workout_exercise_id: we4.id})
+
+
+puts "🌱 Seeding session climbing drills..."
+scd1 = SessionClimbingDrill.create({workout_session_id: ws1.id, climbing_drill_id: cd1.id}) 
+scd2 = SessionClimbingDrill.create({workout_session_id: ws3.id, climbing_drill_id: cd1.id}) 
+scd3 = SessionClimbingDrill.create({workout_session_id: ws3.id, climbing_drill_id: cd2.id}) 
+
 
 puts "🌱 Seeding Project Plans..."
 pp1 = ProjectPlan.create({project_id: p1.id, workout_plan_id: wp1.id}) 
