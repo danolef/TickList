@@ -1,8 +1,41 @@
 import { useState, useEffect } from "react";
 
 
-function LoginForm() {
+function LoginForm({setUser}) {
   
+  const [loginData, setLoginData] = useState({
+    username: '',
+    password: ''
+})
+
+  function handleLoginSubmit(e){
+    e.preventDefault();
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData)
+    })
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setUser(user)
+        })
+      } else {
+        res.json()
+        .then ((errors) => {
+          console.error(errors)
+        })
+      }
+    })
+  }
+
+  function handleLoginChange(e){
+    setLoginData({...loginData, [e.target.name]:e.target.value})
+    console.log(e.target.value)
+  }
 
   return (
     <div>
@@ -22,14 +55,14 @@ function LoginForm() {
     </div>
     <div class="container-fluid">
         <div class="row">
-        <form>
+        <form onSubmit={handleLoginSubmit}>
           <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+              <label for="username" class="form-label">User Name</label>
+              <input value={loginData.username} name="username" onChange={handleLoginChange} type="text" class="form-control" id="username"/>
           </div>
           <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1"/>
+              <label for="password" class="form-label">Password</label>
+              <input value={loginData.password} name="password" onChange={handleLoginChange} type="password" class="form-control" id="password"/>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

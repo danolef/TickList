@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: %i[ show update destroy ]
   skip_before_action :authorize, only: [:create]
   
   # GET /users
