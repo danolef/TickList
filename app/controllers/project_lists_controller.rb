@@ -2,13 +2,13 @@ class ProjectListsController < ApplicationController
   
 
   def index
-    render json:  ProjectList.all
+    render json: @current_user.project_lists
   end
 
  
   
   def create
-    project_list = ProjectList.create!(project_list_params)
+    project_list = @current_user.project_lists.create!(project_list_params)
     render json: project_list, status: :created
   end
 

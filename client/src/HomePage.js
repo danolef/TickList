@@ -9,7 +9,7 @@ function HomePage({setUser}) {
             <h1>HomePage</h1>
            </div> 
            <div class="row">
-                <a class="nav-link active" href="#">My Tick Lists</a>
+                <a class="nav-link active" href="/projectlist">My Tick Lists</a>
            </div>
            <div class="row">
                 <a class="nav-link active" href="#">My Workout Plans</a>

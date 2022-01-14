@@ -1,5 +1,8 @@
+import { useHistory } from "react-router-dom";
 
 function NavBar({setUser}) {
+  
+  let history = useHistory();
     
     function handleLogout(e) {
         console.log(e)
@@ -9,16 +12,18 @@ function NavBar({setUser}) {
             setUser(null)
           }
         })
+        history.push("/")
       }
     
+
     return (
         <div>
           <div class="container">
             <div calss="row">
            <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Home</a>
-                <a class="navbar-brand" href="#">Tick Lists</a>
+                <a class="navbar-brand" href="/home">Home</a>
+                <a class="navbar-brand" href="/projectlist">Tick Lists</a>
                 <a class="navbar-brand" href="#">Workout Plans</a>
                 {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span> */}

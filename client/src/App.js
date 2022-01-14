@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginSignUpPage from "./LoginSignUpPage";
 import HomePage from "./HomePage";
+import ProjectListPage from "./ProjectListPage";
 import ProjectPage from "./ProjectPage";
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/projectlist">
+            <ProjectListPage />
+          </Route>
+          <Route exact path="/projectlists/:id">
             <ProjectPage />
           </Route>
           <Route exact path="/home">
