@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginSignUpPage from "./LoginSignUpPage";
 import HomePage from "./HomePage";
+import ProjectPage from "./ProjectPage";
 
 function App() {
   const [user, setUser] = useState(null)
-
+  console.log(user)
+  
   useEffect(() => {
     fetch("/me")
     .then((res) => {
@@ -20,7 +22,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/home">
+          <Route exact path="/projectlist">
+            <ProjectPage />
+          </Route>
+          <Route exact path="/home">
             <HomePage setUser={setUser}/>
           </Route>
           <Route path="/">
