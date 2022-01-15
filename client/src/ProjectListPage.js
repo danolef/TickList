@@ -3,9 +3,8 @@ import NavBar from './NavBar'
 import ProjectListCard from './ProjectListCard'
 import AddProjectList from './AddProjectList'
 
-function ProjectListPage() {
+function ProjectListPage({projectList, setProjecList, setProjectListId}) {
 
-    const [projectList, setProjecList] = useState([])
     const [addForm, setAddForm] = useState(false)
 
     useEffect( () => {
@@ -22,8 +21,7 @@ function ProjectListPage() {
           setAddForm(!addForm)
       }
 
-    const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData}/>)
-
+    const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData} setProjectListId={setProjectListId}/>)
 
 
     return (

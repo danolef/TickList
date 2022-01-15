@@ -2,11 +2,14 @@ class ProjectListsController < ApplicationController
   
 
   def index
-    render json: @current_user.project_lists
+    render json: @current_user.project_lists, include: ['climbs', 'projects.climb']
   end
 
- 
-  
+  def show
+    projects=ProjectList.find(params[:id]).projects
+    render json: projects
+  end
+
   def create
     project_list = @current_user.project_lists.create!(project_list_params)
     render json: project_list, status: :created

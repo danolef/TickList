@@ -1,28 +1,32 @@
 import { useState, useEffect } from 'react'
+import {useParams} from 'react-router-dom'
 import NavBar from './NavBar'
 import ProjectCard from './ProjectCard'
+import AddProject from './AddProject'
 
-function ProjectPage () {
+function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
 
-    const [projectsArr, setProjectsArr] = useState([])
     const [addForm, setAddForm] = useState(false)
-    const [filteredItemsArr, setFilteredItemsArr] = useState([]);
-
-    useEffect( () => {
-        fetch("/projects")
-        .then ((res) => res.json())
-        .then((projects) => {
-          setProjectsArr(projects) 
-          setFilteredItemsArr(projects)
-          console.log(projects)
-        })
-      }, [])
-
+    const {id} = useParams()
+  
+    
       function showAddForm() {
           setAddForm(!addForm)
       }
 
-    const allProjectCards = projectsArr.map(projectData => <ProjectCard key ={projectData.id} projectData={projectData}/>)
+      useEffect( () => {
+        fetch(`/project_lists/${id}`)
+        .then ((res) => res.json())
+        .then((projects) => {
+          setProjectsArr(projects) 
+        })
+      }, [])
+
+      const name= (projectsArr[0])
+      console.log(projectsArr)
+
+    const allProjectCards = projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId}/>
+    )
 
 
 
@@ -33,11 +37,11 @@ function ProjectPage () {
                     <NavBar/>
                 </div>
                 <div class="row">
-                    <h1>Project Name</h1>
+                    {/* <h1>{name}</h1> */}
                     <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div class="row">
-                    {/* {addForm ? <AddProjectList projectList={projectList} setProjecList={setProjecList}/> : null} */}
+                    {addForm ? <AddProject projectsArr={projectsArr} setProjectsArr={setProjectsArr}/> : null}
                 </div>
                 <div class="row">
                     {allProjectCards}

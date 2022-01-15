@@ -4,9 +4,15 @@ import LoginSignUpPage from "./LoginSignUpPage";
 import HomePage from "./HomePage";
 import ProjectListPage from "./ProjectListPage";
 import ProjectPage from "./ProjectPage";
+import ClimbInfo from "./ClimbInfo";
 
 function App() {
   const [user, setUser] = useState(null)
+  const [projectList, setProjecList] = useState([])
+  const [projectListId, setProjectListId] = useState(null)
+  const [projectId, setProjectId] = useState(null)
+  const [projectsArr, setProjectsArr] = useState([])
+
   console.log(user)
   
   useEffect(() => {
@@ -24,10 +30,13 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/projectlist">
-            <ProjectListPage />
+            <ProjectListPage projectList={projectList} setProjecList={setProjecList} setProjectListId={setProjectListId}/>
           </Route>
           <Route exact path="/projectlists/:id">
-            <ProjectPage />
+            <ProjectPage  projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectListId={projectListId} setProjectId={setProjectId}/>
+          </Route>
+          <Route exact path="/climb/:id">
+            <ClimbInfo projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectId={projectId}/>
           </Route>
           <Route exact path="/home">
             <HomePage setUser={setUser}/>
