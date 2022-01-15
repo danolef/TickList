@@ -15,7 +15,11 @@ class ProjectListsController < ApplicationController
     render json: project_list, status: :created
   end
 
-  
+  def destroy
+    projectList= ProjectList.find_by(id: params[:id])
+    projectList.destroy
+    head :no_content
+end
 
   private
     

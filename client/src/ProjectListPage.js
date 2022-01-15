@@ -21,7 +21,7 @@ function ProjectListPage({projectList, setProjecList, setProjectListId}) {
           setAddForm(!addForm)
       }
 
-    const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData} setProjectListId={setProjectListId}/>)
+    const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>)
 
 
     return (
