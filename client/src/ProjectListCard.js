@@ -1,7 +1,17 @@
 import { useState } from "react";
+import UpDateProjectList from "./UpdateProjectList";
 
 function ProjectListCard({projectListData, projectList, setProjecList}) {
 
+    const [showUpdateForm, setShowUpdateForm] = useState(false)
+    const[updateForm, setupdateFrom] = useState ({
+        name: projectListData.name,
+        description: projectListData.description,
+        location: projectListData.location,
+        grade: projectListData.grade,
+        climb_type: projectListData.climb_type 
+    })
+    
     const id= projectListData.id
     
     function handleDelete() {
@@ -13,6 +23,10 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
         .then(data => {
             setProjecList(projectList.filter(p => p.id !== id))
         })
+    }
+
+    function handleShowUpdateForm() {
+        setShowUpdateForm(!showUpdateForm)
     }
     
     return (
@@ -28,8 +42,10 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
                             <h6 class="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectListData.climb_type} </h6>
                             <a href={`/projectlists/${id}`} class="card-link">Projects</a>
                             <button type="button" onClick={() => handleDelete(id)} class="btn btn-secondary">Delete</button>
-                            <button type="button" class="btn btn-secondary">Edit</button>
+                            <button type="button" onClick={handleShowUpdateForm} class="btn btn-secondary">Edit</button>
                             {/* <a href="/projects/:id" class="card-link">Another link</a> */}
+                            {showUpdateForm ? <UpDateProjectList projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>
+                            : null}
                         </div>
                     </div>
                 </div>
