@@ -5,6 +5,7 @@ import HomePage from "./HomePage";
 import ProjectListPage from "./ProjectListPage";
 import ProjectPage from "./ProjectPage";
 import ClimbInfo from "./ClimbInfo";
+import WorkoutPlansPage from "./WorkoutPlansPage";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -12,6 +13,7 @@ function App() {
   const [projectListId, setProjectListId] = useState(null)
   const [projectId, setProjectId] = useState(null)
   const [projectsArr, setProjectsArr] = useState([])
+  const [workoutPlans, setWorkoutPlans] = useState([])
 
   console.log(user)
   
@@ -37,6 +39,9 @@ function App() {
           </Route>
           <Route exact path="/climb/:id">
             <ClimbInfo projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectId={projectId}/>
+          </Route>
+          <Route exact path="/workoutplans">
+            <WorkoutPlansPage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
           </Route>
           <Route exact path="/home">
             <HomePage setUser={setUser}/>
