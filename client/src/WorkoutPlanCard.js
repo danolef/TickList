@@ -1,14 +1,14 @@
 import { useState } from "react";
-// import UpDateProjectList from "./UpdateProjectList";
+import UpdateWorkoutPlan from "./UpdateWorkoutPlan";
 
 function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
 
     const [showUpdateForm, setShowUpdateForm] = useState(false)
-    const[updateForm, setupdateFrom] = useState ({
-        name: workoutPlansData.name,
-        Description: workoutPlansData.Description,
-        Focus: workoutPlansData.Focus,
-    })
+    // const[updateForm, setupdateFrom] = useState ({
+    //     name: workoutPlansData.name,
+    //     Description: workoutPlansData.Description,
+    //     Focus: workoutPlansData.Focus,
+    // })
     
     const id= workoutPlansData.id
     
@@ -40,8 +40,8 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
                             <button type="button" onClick={() => handleDelete(id)} class="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} class="btn btn-secondary">Edit</button>
                             {/* <a href="/projects/:id" class="card-link">Another link</a> */}
-                            {/* {showUpdateForm ? <UpDateProjectList projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>
-                            : null} */}
+                            {showUpdateForm ? <UpdateWorkoutPlan workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
+                            : null}
                         </div>
                     </div>
                 </div>
