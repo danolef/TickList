@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import WorkoutPlanCard from './WorkoutPlanCard'
+import AddWorkoutPlan from './AddWorkoutPlan'
 
 function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
 
@@ -34,7 +35,7 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
                     <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div class="row">
-                    {/* {addForm ? <AddProjectList projectList={projectList} setProjecList={setProjecList}/> : null} */}
+                    {addForm ? <AddWorkoutPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/> : null}
                 </div>
                 <div class="row">
                     {allWorkoutPlansCards}

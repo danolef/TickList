@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function AddProjectList({projectList, setProjecList}) {
 
@@ -39,6 +39,7 @@ function AddProjectList({projectList, setProjecList}) {
         setprojectListData({...projectListData, [e.target.name]:e.target.value})
         console.log(e.target.value)
     }
+
     return(
         <div>
             <div class="container-fluid">
