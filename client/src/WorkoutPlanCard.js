@@ -4,11 +4,6 @@ import UpdateWorkoutPlan from "./UpdateWorkoutPlan";
 function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
 
     const [showUpdateForm, setShowUpdateForm] = useState(false)
-    // const[updateForm, setupdateFrom] = useState ({
-    //     name: workoutPlansData.name,
-    //     Description: workoutPlansData.Description,
-    //     Focus: workoutPlansData.Focus,
-    // })
     
     const id= workoutPlansData.id
     

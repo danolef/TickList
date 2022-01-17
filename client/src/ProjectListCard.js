@@ -4,14 +4,7 @@ import UpDateProjectList from "./UpdateProjectList";
 function ProjectListCard({projectListData, projectList, setProjecList}) {
 
     const [showUpdateForm, setShowUpdateForm] = useState(false)
-    // const[updateForm, setupdateFrom] = useState ({
-    //     name: projectListData.name,
-    //     description: projectListData.description,
-    //     location: projectListData.location,
-    //     grade: projectListData.grade,
-    //     climb_type: projectListData.climb_type 
-    // })
-    
+        
     const id= projectListData.id
     
     function handleDelete() {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddProject({projectsArr, setProjectsArr}) {
+function AddProject({projectsArr, setProjectsArr, projectListId}) {
 
     const [climbData, setClimbData] = useState({
         name:'',
@@ -9,10 +9,13 @@ function AddProject({projectsArr, setProjectsArr}) {
         climb_type:'',
         climb_attribute:'',
         beta:'',
-        completed:false
+        completed:false,
+        project_list_id: projectListId
     })
+    console.log(projectListId)
 
-   
+   console.log(projectsArr)
+   console.log(projectsArr.id)
     function handleSignupSubmit(e){
         e.preventDefault();
         fetch("/climbs", {
@@ -26,6 +29,7 @@ function AddProject({projectsArr, setProjectsArr}) {
           if (res.ok) {
             res.json()
             .then((newProject) => {
+              console.log(newProject)
                 setProjectsArr([newProject, ...projectsArr])
             })
           } else {
@@ -36,6 +40,8 @@ function AddProject({projectsArr, setProjectsArr}) {
           }
         })
     }
+
+  
 
     function handleSignupChange(e){
         setClimbData({...climbData, [e.target.name]:e.target.value})

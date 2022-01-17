@@ -25,7 +25,7 @@ function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
       const name= (projectsArr[0])
       console.log(projectsArr)
 
-    const allProjectCards = projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId}/>
+    const allProjectCards = projectsArr?.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId}/>
     )
 
 
@@ -41,7 +41,7 @@ function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
                     <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div class="row">
-                    {addForm ? <AddProject projectsArr={projectsArr} setProjectsArr={setProjectsArr}/> : null}
+                    {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/> : null}
                 </div>
                 <div class="row">
                     {allProjectCards}

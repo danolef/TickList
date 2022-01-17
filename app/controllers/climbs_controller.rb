@@ -2,7 +2,8 @@ class ClimbsController < ApplicationController
   
     def create
         # projectList= ProjectList.find(params(:id))
-        newproject = Climb.create!(climb_params).projects.create!(project_params)
+        newclimb = Climb.create!(climb_params)
+        newproject= newclimb.projects.create!(project_params)
         render json: newproject, status: :created
       end
 
@@ -13,7 +14,7 @@ private
   end
 
   def project_params
-    params.permit(:beta, :completed, :climb_id, :project_list_id)
+    params.permit(:beta, :completed, :project_list_id)
   end
 
 end

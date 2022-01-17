@@ -17,20 +17,24 @@ function ClimbInfo(projectsArr, setProjectsArr, projectId) {
         })
       }, [])
 
-      console.log(climb)
+      console.log(climb.length)
       const completed = climb.completed
+
+      if (climb.length === 0) {
+          return <h2>Loading. . .</h2>
+      }
 
     return (
         <div>
-            <div class="container-fluid">
-                <div class="row">
+            <div className="container-fluid">
+                <div className="row">
                     <NavBar/>
                 </div>
                 <div class="row">
                     <h1>Climb Info</h1>
                 </div>
                 <div class="row">
-                    <h2>Name: </h2>
+                   <h2>Name: {climb.climb.name}</h2>
                 </div>
                 <div class="row">
                    <h3>Completed: </h3>
