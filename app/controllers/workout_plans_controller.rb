@@ -5,7 +5,7 @@ class WorkoutPlansController < ApplicationController
     end
 
     def show
-        workoutSessions=WorkoutPlans.find(params[:id]).workout_sessions
+        workoutSessions=WorkoutPlan.find(params[:id]).workout_sessions
         render json: workoutSessions
       end
     

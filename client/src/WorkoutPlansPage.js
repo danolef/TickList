@@ -20,8 +20,8 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
           setAddForm(!addForm)
       }
 
-    const allWorkoutPlansCards = workoutPlans.map(workoutPlansData => <WorkoutPlanCard key ={workoutPlansData.id} workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>)
-
+    const allWorkoutPlansCards = workoutPlans.length > 0 ? workoutPlans.map(workoutPlansData => <WorkoutPlanCard key ={workoutPlansData.id} workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>)
+    : null
 
     return (
         <div>

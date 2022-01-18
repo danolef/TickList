@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UpdateWorkoutPlan from "./UpdateWorkoutPlan";
+import UpdateWorkoutSession from "./UpdateWorkoutSession";
 
 function WorkoutSessionCard({workoutSessionData, workoutSessions, setWorkoutSessions}) {
 

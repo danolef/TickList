@@ -1,11 +1,14 @@
 import { useState } from "react";
+import {useParams} from 'react-router-dom'
 
 function AddWorkoutSession({workoutSessions, setWorkoutSessions}) {
 
+    const {id} = useParams()
     const [sessionData, setSessionData] = useState({
         name:'',
         description:'',
-        gym_area:''
+        gym_area:'',
+        workout_plan_id: id
     })
    
 

@@ -9,8 +9,10 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
     const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
 
+    console.log(workoutSessions)
+
     useEffect( () => {
-        fetch("/workout_sessions")
+        fetch(`/workout_plans/${id}`)
         .then ((res) => res.json())
         .then((workoutSessionArr) => {
             setWorkoutSessions(workoutSessionArr) 
