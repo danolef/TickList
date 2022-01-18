@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import ExerciseTableLine from './ExerciseTableLine'
 import ClimbingDrillTableLine from './ClimbingDrillTableLine'
+import AddExercise from './AddExercise'
 
 function ExercisesPage({sessionExercises, setSessionExercises}) {
   
+    const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
     
     useEffect( () => {
@@ -16,6 +18,11 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
             setSessionExercises(exercises) 
         })
     }, [])
+
+
+    function showAddForm() {
+        setAddForm(!addForm)
+    }
     
     //   function handleAddResourceSubmit(e) {
     //     e.preventDefault();
@@ -64,8 +71,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     const exercises= sessionExercises.length === undefined ? sessionExercises.workout_exercises.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise}/>)
         : null
 
-    const climbingDrill= sessionExercises.climbing_drills.length === undefined ? sessionExercises.climbing_drills.map(climbingDrill => <ExerciseTableLine key={climbingDrill.id} climbingDrill={climbingDrill}/>)
-    : null
+    // const climbingDrill= sessionExercises.climbing_drills.length === undefined ? sessionExercises.climbing_drills.map(climbingDrill => <ExerciseTableLine key={climbingDrill.id} climbingDrill={climbingDrill}/>)
+    // : null
 
 
     return (
@@ -78,7 +85,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
             <div className="container-fluid">
                 <div className="row">
                     <h2>Fitness Exercises</h2>
-                    <button type="button" className="btn btn-secondary">Add Exercise</button>
+                    <button type="button" onClick={showAddForm} className="btn btn-secondary">Add Exercise</button>
+                    {addForm ? <AddExercise sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
                 <table className="table">
                     <thead>
                         <tr>
@@ -109,7 +117,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                         <th scope="col">Notes</th>
                         </tr>
                     </thead>
-                        {climbingDrill}
+                        {/* {climbingDrill} */}
                     </table>
                 </div> 
             </div>
