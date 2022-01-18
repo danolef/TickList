@@ -8,7 +8,7 @@ function WorkoutSessionCard({workoutSessionData, workoutSessions, setWorkoutSess
     const id= workoutSessionData.id
     
     function handleDelete() {
-        fetch(`workout_sessions/${id}`, {
+        fetch(`/workout_sessions/${id}`, {
             method: "DELETE",
             headers:{'Content-Type' : 'application/json'}
         })
