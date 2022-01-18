@@ -30,7 +30,7 @@ function WorkoutSessionCard({workoutSessionData, workoutSessions, setWorkoutSess
                             <h5 className="card-title">{workoutSessionData.name}</h5>
                             <p className="card-text"><strong>Description:</strong> {workoutSessionData.description}</p>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Gym Area:</strong> {workoutSessionData.gym_area} </h6>
-                            <a href={`/workoutsessions/${id}`} className="card-link">Session Exercises</a>
+                            <a href={`/exercises/${id}`} className="card-link">Session Exercises</a>
                             <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
                             {showUpdateForm ? <UpdateWorkoutSession workoutSessionData={workoutSessionData} workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/>

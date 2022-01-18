@@ -7,6 +7,7 @@ import ProjectPage from "./ProjectPage";
 import ClimbInfo from "./ClimbInfo";
 import WorkoutPlansPage from "./WorkoutPlansPage";
 import WorkOutSessionPage from "./WorkoutSessionPage";
+import ExercisesPage from "./ExercisesPage";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -16,13 +17,14 @@ function App() {
   const [projectsArr, setProjectsArr] = useState([])
   const [workoutPlans, setWorkoutPlans] = useState([])
   const [workoutSessions, setWorkoutSessions] = useState([])
+  const [sessionExercises, setSessionExercises] = useState([])
 
-  console.log(user)
-  console.log("projectList:", projectList)
-  console.log("projectListId:", projectListId)
-  console.log("projectId:", projectId)
-  console.log("projectsArr:", projectsArr)
-  console.log("projectsArr:", projectsArr)
+  // console.log(user)
+  // console.log("projectList:", projectList)
+  // console.log("projectListId:", projectListId)
+  // console.log("projectId:", projectId)
+  // console.log("projectsArr:", projectsArr)
+  // console.log("projectsArr:", projectsArr)
 
 
   
@@ -54,6 +56,9 @@ function App() {
           </Route>
           <Route exact path="/workoutsessions/:id">
             <WorkOutSessionPage workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/>
+          </Route>
+          <Route exact path="/exercises/:id">
+            <ExercisesPage sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>
           </Route>
           <Route exact path="/home">
             <HomePage setUser={setUser}/>

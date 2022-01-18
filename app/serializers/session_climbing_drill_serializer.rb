@@ -1,3 +1,5 @@
 class SessionClimbingDrillSerializer < ActiveModel::Serializer
-  attributes :id, :workoutSession, :references, :climbingDrill, :references
+  attributes :id, :climbingDrill, :references
 end
+
+# :workoutSession, :references, 
