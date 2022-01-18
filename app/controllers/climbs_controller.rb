@@ -1,11 +1,18 @@
 class ClimbsController < ApplicationController
   
     def create
-        # projectList= ProjectList.find(params(:id))
         newclimb = Climb.create!(climb_params)
         newproject= newclimb.projects.create!(project_params)
         render json: newproject, status: :created
-      end
+    end
+
+    def update
+      project= Project.find_by(id: params[:id])
+      climb= project.climb
+      climb.update!({name:params[:name], location:params[:location], grade:params[:grade], climb_type:params[:climb_type], climb_attribute:params[:climb_attribute]})
+      project.update!({beta:params[:beta], completed:params[:completed]})
+      render json: climb
+    end
 
 private
 

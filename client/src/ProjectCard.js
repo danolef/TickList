@@ -1,28 +1,39 @@
 
-function ProjectCard({projectData, setProjectId}) {
+function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
 
-    console.log(projectData)
     const completed = projectData.completed
     const climbId= projectData.climb.id
+    const id= projectData.id
+
+    console.log("projectData.id:", projectData.id)
+    // console.log("projectsArr:", projectsArr)
 
     setProjectId(climbId)
 
+    function handleDelete() {
+        fetch(`/projects/${id}`, {
+            method: "DELETE",
+            headers:{'Content-Type' : 'application/json'}
+        })
+        .then(() => {
+            setProjectsArr(projectsArr.filter(p => p.id !== id))
+        })
+    }
+
     return (
         <div>
-            <div class="container">
-                <div class="row">
-                    <div class="card" /*style="'width: 18rem;"*/>
-                        <div class="card-body">
-                            <h5 class="card-title">{projectData.climb.name}</h5>
-                            {/* <p class="card-text"><strong>Description:</strong> {projectData.description}</p> */}
-                            <h6 class="card-subtitle mb-2 text-muted"><strong>Location:</strong> {projectData.climb.location} </h6>
-                            <h6 class="card-subtitle mb-2 text-muted"><strong>Grade:</strong> {projectData.climb.grade} </h6>
-                            <h6 class="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectData.climb.climb_type} </h6>
-                            <h6 class="card-subtitle mb-2 text-muted"><strong>Completed:</strong> {completed ? "yes" : "no"}</h6>
-                            <a href= {`/climb/${climbId}`} class="card-link">Climb Info</a>
-                            <button type="button" class="btn btn-secondary">Delete</button>
-                            <button type="button" class="btn btn-secondary">Edit</button>
-                            {/* <a href="/projects/:id" class="card-link">Another link</a> */}
+            <div className="container">
+                <div className="row">
+                    <div className="card" /*style="'width: 18rem;"*/>
+                        <div className="card-body">
+                            <h5 className="card-title">{projectData.climb.name}</h5>
+                            <p class="card-text"><strong>Description:</strong> {projectData.description}</p>
+                            <h6 className="card-subtitle mb-2 text-muted"><strong>Location:</strong> {projectData.climb.location} </h6>
+                            <h6 className="card-subtitle mb-2 text-muted"><strong>Grade:</strong> {projectData.climb.grade} </h6>
+                            <h6 className="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectData.climb.climb_type} </h6>
+                            <h6 className="card-subtitle mb-2 text-muted"><strong>Completed:</strong> {completed ? "yes" : "no"}</h6>
+                            <a href= {`/climb/${id}`} className="card-link">Climb Info</a>
+                            <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
                         </div>
                     </div>
                 </div>

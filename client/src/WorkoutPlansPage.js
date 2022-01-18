@@ -15,7 +15,6 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
         })
       }, [])
 
-      console.log(workoutPlans)
 
       function showAddForm() {
           setAddForm(!addForm)
@@ -26,18 +25,18 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
 
     return (
         <div>
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     <NavBar/>
                 </div>
-                <div class="row">
+                <div className="row">
                     <h1>My Workout Plans</h1>
-                    <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
-                <div class="row">
+                <div className="row">
                     {addForm ? <AddWorkoutPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/> : null}
                 </div>
-                <div class="row">
+                <div className="row">
                     {allWorkoutPlansCards}
                 </div>
             

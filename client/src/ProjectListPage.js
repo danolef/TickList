@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import ProjectListCard from './ProjectListCard'
 import AddProjectList from './AddProjectList'
 
-function ProjectListPage({projectList, setProjecList, setProjectListId}) {
+function ProjectListPage({projectList, setProjecList}) {
 
     const [addForm, setAddForm] = useState(false)
 
@@ -15,8 +15,6 @@ function ProjectListPage({projectList, setProjecList, setProjectListId}) {
         })
       }, [])
 
-      console.log(projectList)
-
       function showAddForm() {
           setAddForm(!addForm)
       }
@@ -26,18 +24,18 @@ function ProjectListPage({projectList, setProjecList, setProjectListId}) {
 
     return (
         <div>
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     <NavBar/>
                 </div>
-                <div class="row">
+                <div className="row">
                     <h1>My Projects</h1>
-                    <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
-                <div class="row">
+                <div className="row">
                     {addForm ? <AddProjectList projectList={projectList} setProjecList={setProjecList}/> : null}
                 </div>
-                <div class="row">
+                <div className="row">
                     {allProjectCards}
                 </div>
             

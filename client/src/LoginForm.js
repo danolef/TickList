@@ -34,37 +34,36 @@ function LoginForm({setUser}) {
 
   function handleLoginChange(e){
     setLoginData({...loginData, [e.target.name]:e.target.value})
-    console.log(e.target.value)
   }
 
   return (
     <div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="row">
+    <div className="container-fluid">
+        <div className="row">
+            <div className="row">
               <h1>TickList</h1>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="row">
+    <div className="container-fluid">
+        <div className="row">
+            <div className="row">
               <h5>Already have an account?</h5>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
+    <div className="container-fluid">
+        <div className="row">
         <form onSubmit={handleLoginSubmit}>
-          <div class="mb-3">
-              <label for="username" class="form-label">User Name</label>
-              <input value={loginData.username} name="username" onChange={handleLoginChange} type="text" class="form-control" id="username"/>
+          <div className="mb-3">
+              <label for="username" className="form-label">User Name</label>
+              <input value={loginData.username} name="username" onChange={handleLoginChange} type="text" className="form-control" id="username"/>
           </div>
-          <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input value={loginData.password} name="password" onChange={handleLoginChange} type="password" class="form-control" id="password"/>
+          <div className="mb-3">
+              <label for="password" className="form-label">Password</label>
+              <input value={loginData.password} name="password" onChange={handleLoginChange} type="password" className="form-control" id="password"/>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         </div>
     </div>

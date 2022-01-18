@@ -3,5 +3,5 @@ class ProjectSerializer < ActiveModel::Serializer
     has_one :climb
     has_one :project_list
     has_many :project_plans
-    # has_many :resources
+    has_many :resources
 end

@@ -42,30 +42,30 @@ function AddProjectList({projectList, setProjecList}) {
 
     return(
         <div>
-            <div class="container-fluid">
-        <div class="row">
+            <div className="container-fluid">
+        <div className="row">
         <form onSubmit={handleSignupSubmit}>
-          <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input name="name" value={projectListData.name} onChange={handleSignupChange} type="text" class="form-control" id="name"/>
+          <div className="mb-3">
+              <label for="name" className="form-label">Name</label>
+              <input name="name" value={projectListData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
           </div>
-          <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <input name="description" value={projectListData.description} onChange={handleSignupChange} type="text" class="form-control" id="description"/>
+          <div className="mb-3">
+              <label for="description" className="form-label">Description</label>
+              <input name="description" value={projectListData.description} onChange={handleSignupChange} type="text" className="form-control" id="description"/>
           </div>
-          <div class="mb-3">
-              <label for="location" class="form-label">Location</label>
-              <input name="location" value={projectListData.location} onChange={handleSignupChange} type="text" class="form-control" id="location"/>
+          <div className="mb-3">
+              <label for="location" className="form-label">Location</label>
+              <input name="location" value={projectListData.location} onChange={handleSignupChange} type="text" className="form-control" id="location"/>
           </div>
-          <div class="mb-3">
-              <label for="grade" class="form-label">Grade</label>
-              <input name="grade" value={projectListData.grade} onChange={handleSignupChange} type="text" class="form-control" id="grade"/>
+          <div className="mb-3">
+              <label for="grade" className="form-label">Grade</label>
+              <input name="grade" value={projectListData.grade} onChange={handleSignupChange} type="text" className="form-control" id="grade"/>
           </div>
-          <div class="mb-3">
-              <label for="climb_type" class="form-label">Climb Type</label>
-              <input name="climb_type" value={projectListData.climb_type} onChange={handleSignupChange} type="text" class="form-control" id="climb_type"/>
+          <div className="mb-3">
+              <label for="climb_type" className="form-label">Climb Type</label>
+              <input name="climb_type" value={projectListData.climb_type} onChange={handleSignupChange} type="text" className="form-control" id="climb_type"/>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         </div>
     </div>

@@ -10,4 +10,10 @@ class ProjectsController < ApplicationController
         render json: project
     end
 
+    def destroy
+      project= Project.find_by(id: params[:id])
+      project.destroy
+      head :no_content
+    end
+
 end

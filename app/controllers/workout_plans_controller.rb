@@ -21,7 +21,7 @@ class WorkoutPlansController < ApplicationController
       end
     
       def destroy
-        workoutPlan= WorkoutPlans.find_by(id: params[:id])
+        workoutPlan= WorkoutPlan.find_by(id: params[:id])
         workoutPlan.destroy
         head :no_content
       end

@@ -12,8 +12,7 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
             method: "DELETE",
             headers:{'Content-Type' : 'application/json'}
         })
-        .then(res => res.json())
-        .then(data => {
+        .then(() => {
             setWorkoutPlans(workoutPlans.filter(p => p.id !== id))
         })
     }
@@ -24,17 +23,16 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
     
     return (
         <div>
-            <div class="container">
-                <div class="row">
-                    <div class="card" /*style="'width: 18rem;"*/>
-                        <div class="card-body">
-                            <h5 class="card-title">{workoutPlansData.name}</h5>
-                            <p class="card-text"><strong>Description:</strong> {workoutPlansData.Description}</p>
-                            <h6 class="card-subtitle mb-2 text-muted"><strong>Focus:</strong> {workoutPlansData.Focus} </h6>
-                            <a href={`/projectlists/${id}`} class="card-link">Workout Sessions</a>
-                            <button type="button" onClick={() => handleDelete(id)} class="btn btn-secondary">Delete</button>
-                            <button type="button" onClick={handleShowUpdateForm} class="btn btn-secondary">Edit</button>
-                            {/* <a href="/projects/:id" class="card-link">Another link</a> */}
+            <div className="container">
+                <div className="row">
+                    <div className="card" /*style="'width: 18rem;"*/>
+                        <div className="card-body">
+                            <h5 className="card-title">{workoutPlansData.name}</h5>
+                            <p className="card-text"><strong>Description:</strong> {workoutPlansData.Description}</p>
+                            <h6 className="card-subtitle mb-2 text-muted"><strong>Focus:</strong> {workoutPlansData.Focus} </h6>
+                            <a href={`/workoutsessions/${id}`} className="card-link">Workout Sessions</a>
+                            <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
+                            <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
                             {showUpdateForm ? <UpdateWorkoutPlan workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
                             : null}
                         </div>

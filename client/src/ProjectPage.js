@@ -6,6 +6,7 @@ import AddProject from './AddProject'
 
 function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
 
+    const [showUpdateForm, setShowUpdateForm] = useState(false)
     const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
   
@@ -22,28 +23,31 @@ function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
         })
       }, [])
 
-      const name= (projectsArr[0])
-      console.log(projectsArr)
-
-    const allProjectCards = projectsArr?.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId}/>
-    )
+    //   if (projectsArr.length === 0) {
+    //     return <h2>Loading. . .</h2>
+    //   }
 
 
+        const allProjectCards = projectsArr.length > 0 ? projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/>)
+      : null
+      
+        // const projetListName = projectsArr.length > 0 ? projectsArr.project_list.name : null
+    
 
     return (
         <div>
-            <div class="container">
-                <div class="row">
+            <div className="container">
+                <div className="row">
                     <NavBar/>
                 </div>
-                <div class="row">
-                    {/* <h1>{name}</h1> */}
-                    <button type="button" class="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                <div className="row">
+                    {/* <h1>{projetListName}</h1> */}
+                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
-                <div class="row">
+                <div className="row">
                     {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/> : null}
                 </div>
-                <div class="row">
+                <div className="row">
                     {allProjectCards}
                 </div>
             

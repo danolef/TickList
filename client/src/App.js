@@ -6,6 +6,7 @@ import ProjectListPage from "./ProjectListPage";
 import ProjectPage from "./ProjectPage";
 import ClimbInfo from "./ClimbInfo";
 import WorkoutPlansPage from "./WorkoutPlansPage";
+import WorkOutSessionPage from "./WorkoutSessionPage";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -14,8 +15,16 @@ function App() {
   const [projectId, setProjectId] = useState(null)
   const [projectsArr, setProjectsArr] = useState([])
   const [workoutPlans, setWorkoutPlans] = useState([])
+  const [workoutSessions, setWorkoutSessions] = useState([])
 
   console.log(user)
+  console.log("projectList:", projectList)
+  console.log("projectListId:", projectListId)
+  console.log("projectId:", projectId)
+  console.log("projectsArr:", projectsArr)
+  console.log("projectsArr:", projectsArr)
+
+
   
   useEffect(() => {
     fetch("/me")
@@ -42,6 +51,9 @@ function App() {
           </Route>
           <Route exact path="/workoutplans">
             <WorkoutPlansPage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
+          </Route>
+          <Route exact path="/workoutsessions/:id">
+            <WorkOutSessionPage workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/>
           </Route>
           <Route exact path="/home">
             <HomePage setUser={setUser}/>
