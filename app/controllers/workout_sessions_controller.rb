@@ -16,6 +16,12 @@ class WorkoutSessionsController < ApplicationController
         render json: newSession, status: :created
       end
 
+      def update
+        workoutSession= WorkoutSession.find_by(id: params[:id])
+        workoutSession.update!({name:params[:name], description:params[:description], gym_area:params[:gym_area]})
+        render json: workoutSession
+      end
+
       def destroy
         workoutSession= WorkoutSession.find_by(id: params[:id])
         workoutSession.destroy

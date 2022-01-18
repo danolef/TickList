@@ -5,7 +5,7 @@ function UpdateWorkoutSession({workoutSessionData, workoutSessions, setWorkoutSe
     const id= workoutSessionData.id
     const [updateWorkoutSessionData, setupdateWorkoutSessionData] = useState({
         name: workoutSessionData.name,
-        Description: workoutSessionData.description,
+        description: workoutSessionData.description,
         gym_area: workoutSessionData.gym_area,
     })
 
