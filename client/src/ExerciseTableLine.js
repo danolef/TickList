@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import UpdateExercise from './UpdateExercise'
 
-function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
+function ExerciseTableLine ({exercise, sessionExercisesArr, setSessionExercisesArr}) {
 
     const id= exercise.id
     const [updateForm, setUpdateForm] = useState(false)
@@ -12,7 +12,7 @@ function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
             headers:{'Content-Type' : 'application/json'}
         })
         .then(() => {
-            setSessionExercises(sessionExercises.filter(p => p.id !== id))
+            setSessionExercisesArr(sessionExercisesArr.filter(p => p.id !== id))
         })
     }
 
@@ -32,7 +32,7 @@ function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
             <td>{exercise.workout_exercise.notes}</td>
             </tr>
             <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
-            {updateForm ? <UpdateExercise exercise={exercise} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
+            {updateForm ? <UpdateExercise exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 

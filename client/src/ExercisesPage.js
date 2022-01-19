@@ -11,6 +11,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
   
     const [addForm, setAddForm] = useState(false)
     const [addClimbingForm, setaddClimbingForm] = useState(false)
+    const [sessionExercisesArr, setSessionExercisesArr] =useState([])
 
     const {id} = useParams()
     
@@ -18,11 +19,13 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
         fetch(`/workout_sessions/${id}`)
         .then ((res) => res.json())
         .then((exercises) => {
-            setSessionExercises([exercises]) 
+            console.log(exercises)
+            setSessionExercises([exercises])
+            setSessionExercisesArr(exercises.session_exercises) 
         })
     }, [])
 
-    // console.log(sessionExercises)
+    console.log(sessionExercisesArr)
 
     function showAddClimbingForm() {
         setaddClimbingForm(!addClimbingForm)
@@ -31,53 +34,13 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     function showAddForm() {
         setAddForm(!addForm)
     }
-    //   function handleAddResourceSubmit(e) {
-    //     e.preventDefault();
-    //     fetch(`/projects/${id}/resources`, {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(resourceFormData)
-    //     })
-    //     .then((res) => {
-    //       if (res.ok) {
-    //         res.json()
-    //         .then((newResource) => {
-    //             console.log(newResource)
-    //             // setWorkoutPlans([newWorkoutPlan, ...workoutPlans])
-    //         })
-    //       } else {
-    //         res.json()
-    //         .then((errors) => {
-    //           console.error(errors)
-    //         })
-    //       }
-    //     })
-    // }
-      
-    //   function handleShowUpdateForm() {
-    //     setShowUpdateForm(!showUpdateForm)
-    // }
-
-    // function handleShowAddResourceForm() {
-    //     setshowAddResourceForm(!showAddResourceForm)
-    // }
-
-    // function handleFormChange(e){
-    //     setResourceFormData({...resourceFormData, [e.target.name]:e.target.value})
-    // }
-      
-    //   if (climb.length === 0) {
-    //       return <h2>Loading. . .</h2>
-    //     }
-
+    
     console.log(sessionExercises)
     
     const climbingDrill= sessionExercises.length > 0  ? sessionExercises[0].session_climbing_drills?.map(climbingDrill => <ClimbingDrillTableLine key={climbingDrill.id} climbingDrill={climbingDrill} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>)
     : null
 
-    const exercises= sessionExercises.length > 0 ? sessionExercises[0].session_exercises.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>)
+    const exercises= sessionExercises.length > 0 ? sessionExercisesArr.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr}/>)
         : null
 
     return (
