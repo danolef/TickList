@@ -40,15 +40,15 @@ function UpdateWorkoutSession({workoutSessionData, workoutSessions, setWorkoutSe
                 <div className="row">
                 <form onSubmit={handleUpdateSubmit}>
                     <div className="mb-3">
-                        <label for="name" className="form-label">Name</label>
+                        <label className="form-label">Name</label>
                         <input name="name" value={updateWorkoutSessionData.name} onChange={handleFormChange} type="text" className="form-control" id="name"/>
                     </div>
                     <div className="mb-3">
-                        <label for="description" className="form-label">Description</label>
+                        <label className="form-label">Description</label>
                         <input name="description" value={updateWorkoutSessionData.description} onChange={handleFormChange} type="text" className="form-control" id="description"/>
                     </div>
                     <div className="mb-3">
-                        <label for="gym_area" className="form-label">Gym Area</label>
+                        <label className="form-label">Gym Area</label>
                         <input name="gym_area" value={updateWorkoutSessionData.gym_area} onChange={handleFormChange} type="text" class="form-control" id="gym_area"/>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>

@@ -47,15 +47,15 @@ function AddWorkoutSession({workoutSessions, setWorkoutSessions}) {
         <div className="row">
         <form onSubmit={handleSignupSubmit}>
           <div className="mb-3">
-              <label for="name" className="form-label">Name</label>
+              <label className="form-label">Name</label>
               <input name="name" value={sessionData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
           </div>
           <div className="mb-3">
-              <label for="description" className="form-label">Description</label>
+              <label className="form-label">Description</label>
               <input name="description" value={sessionData.description} onChange={handleSignupChange} type="text" className="form-control" id="description"/>
           </div>
           <div className="mb-3">
-              <label for="gym_area" className="form-label">Gym Area</label>
+              <label className="form-label">Gym Area</label>
               <input name="gym_area" value={sessionData.gym_area} onChange={handleSignupChange} type="text" className="form-control" id="gym_area"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>

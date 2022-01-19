@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   post '/projects/:id/resources', to: "resources#create"
+  post '/climb/:id/project_plans', to: "project_plans#create"
 
   get '*path',
       to: 'fallback#index',

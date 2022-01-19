@@ -11,7 +11,7 @@ function AddWorkoutPlan({workoutPlans, setWorkoutPlans}) {
     function handleSignupSubmit(e){
         e.preventDefault();
         console.log(e)
-        fetch("/workout_plans", {
+        fetch("/workout_plan", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -43,15 +43,15 @@ function AddWorkoutPlan({workoutPlans, setWorkoutPlans}) {
           <div className="row">
           <form onSubmit={handleSignupSubmit}>
             <div className="mb-3">
-                <label for="name" className="form-label">Name</label>
+                <label className="form-label">Name</label>
                 <input name="name" value={workoutPlans.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
             </div>
             <div className="mb-3">
-                <label for="Description" className="form-label">Description</label>
+                <label className="form-label">Description</label>
                 <input name="Description" value={workoutPlans.Description} onChange={handleSignupChange} type="text" className="form-control" id="Description"/>
             </div>
             <div className="mb-3">
-                <label for="Focus" className="form-label">Focus</label>
+                <label className="form-label">Focus</label>
                 <input name="Focus" value={workoutPlans.Focus} onChange={handleSignupChange} type="text" className="form-control" id="Focus"/>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>

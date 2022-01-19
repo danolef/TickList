@@ -50,27 +50,27 @@ function AddProject({projectsArr, setProjectsArr, projectListId}) {
         <div className="row">
         <form onSubmit={handleSignupSubmit}>
           <div className="mb-3">
-              <label for="name" className="form-label">Name</label>
+              <label className="form-label">Name</label>
               <input name="name" value={climbData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
           </div>
           <div className="mb-3">
-              <label for="location" className="form-label">Location</label>
+              <label className="form-label">Location</label>
               <input name="location" value={climbData.location} onChange={handleSignupChange} type="text" className="form-control" id="location"/>
           </div>
           <div className="mb-3">
-              <label for="grade" className="form-label">Grade</label>
+              <label className="form-label">Grade</label>
               <input name="grade" value={climbData.grade} onChange={handleSignupChange} type="text" className="form-control" id="grade"/>
           </div>
           <div className="mb-3">
-              <label for="climb_type" className="form-label">Climb Type</label>
+              <label className="form-label">Climb Type</label>
               <input name="climb_type" value={climbData.climb_type} onChange={handleSignupChange} type="text" className="form-control" id="climb_type"/>
           </div>
           <div className="mb-3">
-              <label for="climb_attribute" className="form-label">Climb Attribute</label>
+              <label className="form-label">Climb Attribute</label>
               <input name="climb_attribute" value={climbData.climb_attribute} onChange={handleSignupChange} type="text" className="form-control" id="climb_attribute"/>
           </div>
           <div className="mb-3">
-              <label for="beta" className="form-label">Beta</label>
+              <label className="form-label">Beta</label>
               <input name="beta" value={climbData.beta} onChange={handleSignupChange} type="text" className="form-control" id="beta"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>

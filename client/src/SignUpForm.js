@@ -54,19 +54,19 @@ function SignUpForm({setUser}) {
         <div className="row">
         <form onSubmit={handleSignupSubmit}>
           <div className="mb-3">
-              <label for="Email" className="form-label">Email address</label>
+              <label className="form-label">Email address</label>
               <input name="email" value={signupData.email} onChange={handleSignupChange} type="email" className="form-control" id="email"/>
           </div>
           <div className="mb-3">
-              <label for="username" className="form-label">User Name</label>
+              <label className="form-label">User Name</label>
               <input name="username" value={signupData.username} onChange={handleSignupChange} type="text" className="form-control" id="username"/>
           </div>
           <div className="mb-3">
-              <label for="password" className="form-label">Password</label>
+              <label className="form-label">Password</label>
               <input name="password" value={signupData.password} onChange={handleSignupChange} type="password" className="form-control" id="password"/>
           </div>
           <div className="mb-3">
-              <label for="passwordConfirmation" className="form-label">Password Confirmation</label>
+              <label className="form-label">Password Confirmation</label>
               <input name="password_confirmation" value={signupData.password_confirmation} onChange={handleSignupChange} type="password" className="form-control" id="password_confirmation"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>

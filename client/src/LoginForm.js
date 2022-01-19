@@ -56,11 +56,11 @@ function LoginForm({setUser}) {
         <div className="row">
         <form onSubmit={handleLoginSubmit}>
           <div className="mb-3">
-              <label for="username" className="form-label">User Name</label>
+              <label className="form-label">User Name</label>
               <input value={loginData.username} name="username" onChange={handleLoginChange} type="text" className="form-control" id="username"/>
           </div>
           <div className="mb-3">
-              <label for="password" className="form-label">Password</label>
+              <label className="form-label">Password</label>
               <input value={loginData.password} name="password" onChange={handleLoginChange} type="password" className="form-control" id="password"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>

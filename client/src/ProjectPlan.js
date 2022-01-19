@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import {Link , useParams} from 'react-router-dom'
 
-function ProjectPlan({workoutPlans}) {
+function ProjectPlan({workoutPlans, setWorkoutPlans}) {
 
 
     const [projectPlanArr, setProjectPlanArr] = useState([])
+    const [workoutPlanId, setWorkoutPlanId] = useState(null)
+
     const {id} = useParams()
 
-    console.log(workoutPlans)
+    console.log(workoutPlanId)
 
     useEffect( () => {
         fetch(`/project_plans/${id}`)
@@ -15,9 +17,18 @@ function ProjectPlan({workoutPlans}) {
         .then((projectPlan) => {
             setProjectPlanArr(projectPlan) 
         })
-      }, [])
-
-      function handleDelete(id) {
+    }, [])
+    
+    useEffect( () => {
+        fetch("/workout_plans")
+        .then ((res) => res.json())
+        .then((workoutPlansArr) => {
+            setWorkoutPlans(workoutPlansArr) 
+        })
+    }, [])
+    
+      
+    function handleDelete(id) {
         fetch(`/project_plans/${id}`, {
             method: "DELETE",
             headers:{'Content-Type' : 'application/json'}
@@ -27,6 +38,34 @@ function ProjectPlan({workoutPlans}) {
         })
     }
 
+    function handlePlanChange(e){
+        setWorkoutPlanId(e.target.value)
+    }
+
+    function addProjectPlan(e) {
+        e.preventDefault()
+        fetch(`/climb/${id}/project_plans`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(workoutPlanId)
+          })
+          .then((res) => {
+            if (res.ok) {
+              res.json()
+              .then((newProjectPlan) => {
+                setProjectPlanArr([newProjectPlan, ...projectPlanArr])
+              })
+            } else {
+              res.json()
+              .then((errors) => {
+                console.error(errors)
+              })
+            }
+          })
+      }
+    
       const workoutPlanLink = projectPlanArr.length > 0 ? projectPlanArr.map((projectData) => 
         <>
             <h3>{projectData.workout_plan.name}</h3>
@@ -37,18 +76,22 @@ function ProjectPlan({workoutPlans}) {
       )
       : null
 
+      const workoutPlanSelect = workoutPlans.map(plan => <>
+        <option key={plan.id} value={plan.id}>{plan.name}</option>
+      </>)
+
     return (
         <div >
             <div className="container-fluid">
             <div className="row ">
                    <h3 className="col">Workout Plan: </h3>
-                   <form>
+                   <form onSubmit={addProjectPlan}>
                     <fieldset >
                         <div className="mb-3">
-                        <label for="disabledSelect" className="form-label">Add a Workout Plan</label>
-                        <select id="disabledSelect" className="form-select">
-                            <option>alskdjfj</option>
-                            <option>alskaedsfdjfj</option>
+                        <label className="form-label">Add a Workout Plan</label>
+                        <select onChange={handlePlanChange} id="select" className="form-select">
+                            <option>Select a Workout Plan</option>
+                            {workoutPlanSelect}
                         </select>
                         </div>
                         <div className="mb-3">

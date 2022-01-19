@@ -48,27 +48,27 @@ function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr})
         <div className="row">
         <form onSubmit={handleUpdateSubmit}>
           <div className="mb-3">
-              <label for="name" className="form-label">Name</label>
+              <label className="form-label">Name</label>
               <input name="name" value={updateExerciseData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
           </div>
           <div className="mb-3">
-              <label for="weight" className="form-label">Weight</label>
+              <label className="form-label">Weight</label>
               <input name="weight" value={updateExerciseData.weight} onChange={handleSignupChange} type="text" className="form-control" id="weight"/>
           </div>
           <div className="mb-3">
-              <label for="duration" className="form-label">Duration</label>
+              <label className="form-label">Duration</label>
               <input name="duration" value={updateExerciseData.duration} onChange={handleSignupChange} type="text" className="form-control" id="duration"/>
           </div>
           <div className="mb-3">
-              <label for="reps" className="form-label">Reps</label>
+              <label className="form-label">Reps</label>
               <input name="reps" value={updateExerciseData.reps} onChange={handleSignupChange} type="text" className="form-control" id="reps"/>
           </div>
           <div className="mb-3">
-              <label for="sets" className="form-label">Sets</label>
+              <label className="form-label">Sets</label>
               <input name="sets" value={updateExerciseData.sets} onChange={handleSignupChange} type="text" className="form-control" id="sets"/>
           </div>
           <div className="mb-3">
-              <label for="notes" className="form-label">Notes</label>
+              <label className="form-label">Notes</label>
               <input name="notes" value={updateExerciseData.notes} onChange={handleSignupChange} type="text" className="form-control" id="notes"/>
           </div>
           <button type="submit"  className="btn btn-primary">Submit</button>
