@@ -15,9 +15,9 @@ function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
     const [resourceFormData, setResourceFormData] = useState({
         site_url: "",
     })
-  
-    console.log(climb)
 
+    console.log(projectsArr)
+  
     useEffect( () => {
         fetch(`/projects/${id}`)
         .then ((res) => res.json())
@@ -106,15 +106,13 @@ function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
                       <div className="row">
                      <form onSubmit={handleAddResourceSubmit}>
                      <div className="mb-3">
-                         <label for="site_url" className="form-label">Site Url</label>
+                         <label className="form-label">Site Url</label>
                          <input name="site_url" value={resourceFormData.site_url} onChange={handleFormChange} type="text" className="form-control" id="site_url"/>
                      </div>
                      <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                     </div>
-
                     : null
-
                    }
                    <ul>
                     {climbResource}

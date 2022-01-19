@@ -4,16 +4,11 @@ import NavBar from './NavBar'
 import ProjectCard from './ProjectCard'
 import AddProject from './AddProject'
 
-function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
+function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) {
 
-    const [showUpdateForm, setShowUpdateForm] = useState(false)
     const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
-  
-    
-      function showAddForm() {
-          setAddForm(!addForm)
-      }
+    console.log(projectsArr)
 
       useEffect( () => {
         fetch(`/project_lists/${id}`)
@@ -23,10 +18,11 @@ function ProjectPage ({setProjectId, projectsArr, setProjectsArr}) {
         })
       }, [])
 
-    //   if (projectsArr.length === 0) {
-    //     return <h2>Loading. . .</h2>
-    //   }
-
+    console.log(projectList) 
+      
+    function showAddForm() {
+        setAddForm(!addForm)
+    }
 
         const allProjectCards = projectsArr.length > 0 ? projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/>)
       : null

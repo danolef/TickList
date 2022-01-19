@@ -8,10 +8,10 @@ class ClimbsController < ApplicationController
 
     def update
       project= Project.find_by(id: params[:id])
+      project.update!({beta:params[:beta], completed:params[:completed]})
       climb= project.climb
       climb.update!({name:params[:name], location:params[:location], grade:params[:grade], climb_type:params[:climb_type], climb_attribute:params[:climb_attribute]})
-      project.update!({beta:params[:beta], completed:params[:completed]})
-      render json: climb
+      render json: project
     end
 
 private

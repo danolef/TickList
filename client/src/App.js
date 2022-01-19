@@ -18,15 +18,6 @@ function App() {
   const [workoutPlans, setWorkoutPlans] = useState([])
   const [workoutSessions, setWorkoutSessions] = useState([])
   const [sessionExercises, setSessionExercises] = useState([])
-
-  // console.log(user)
-  // console.log("projectList:", projectList)
-  // console.log("projectListId:", projectListId)
-  // console.log("projectId:", projectId)
-  // console.log("projectsArr:", projectsArr)
-  // console.log("projectsArr:", projectsArr)
-
-
   
   useEffect(() => {
     fetch("/me")
@@ -46,7 +37,7 @@ function App() {
             <ProjectListPage projectList={projectList} setProjecList={setProjecList} setProjectListId={setProjectListId}/>
           </Route>
           <Route exact path="/projectlists/:id">
-            <ProjectPage  projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectListId={projectListId} setProjectId={setProjectId}/>
+            <ProjectPage  projectList={projectList} projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectListId={projectListId} setProjectId={setProjectId}/>
           </Route>
           <Route exact path="/climb/:id">
             <ClimbInfo workoutPlans={workoutPlans} projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectId={projectId}/>

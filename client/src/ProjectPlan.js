@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom'
 
 function ProjectPlan({workoutPlans}) {
 
-    console.log(workoutPlans)
 
     const [projectPlanArr, setProjectPlanArr] = useState([])
     const {id} = useParams()
@@ -25,8 +24,6 @@ function ProjectPlan({workoutPlans}) {
             setProjectPlanArr(projectPlanArr.filter(p => p.id !== id))
         })
     }
-
-      console.log(projectPlanArr)
 
       const workoutPlanLink = projectPlanArr.length > 0 ? projectPlanArr.map((projectData) => 
         <>
