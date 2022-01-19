@@ -11,20 +11,23 @@ function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
     const [climb, setClimb] = useState([])
     const [showUpdateForm, setShowUpdateForm] = useState(false)
     const [showAddResourceForm, setshowAddResourceForm] = useState(false)
+    const [resources, setResources] = useState([])
     const {id} = useParams()
     const [resourceFormData, setResourceFormData] = useState({
         site_url: "",
     })
-
-    console.log(projectsArr)
   
     useEffect( () => {
         fetch(`/projects/${id}`)
         .then ((res) => res.json())
         .then((project) => {
-          setClimb(project) 
+          setClimb(project)
+          setResources(project.resources) 
         })
       }, [])
+
+      // console.log(climb)
+      // console.log(resources)
 
       function handleAddResourceSubmit(e) {
         e.preventDefault();
@@ -39,8 +42,8 @@ function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
           if (res.ok) {
             res.json()
             .then((newResource) => {
-                console.log(newResource)
-                // setWorkoutPlans([newWorkoutPlan, ...workoutPlans])
+                // console.log(newResource)
+                setResources([...resources, newResource])
             })
           } else {
             res.json()
@@ -67,7 +70,7 @@ function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
           return <h2>Loading. . .</h2>
         }
         
-    const climbResource= climb.resources.map(resource => <ResourceItem key={resource.id} resource={resource}/>)
+    const climbResource= resources.map(resource => <ResourceItem  resources={resources} setResources={setResources} key={resource.id} resource={resource}/>)
        
 
     return (

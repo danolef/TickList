@@ -1,5 +1,5 @@
 
-function ResourceItem({resource}) {
+function ResourceItem({resource, resources, setResources}) {
     
     const id= resource.id
 
@@ -8,9 +8,9 @@ function ResourceItem({resource}) {
             method: "DELETE",
             headers:{'Content-Type' : 'application/json'}
         })
-        // .then(() => {
-        //     setProjectsArr(projectsArr.filter(p => p.id !== id))
-        // })
+        .then(() => {
+            setResources(resources.filter(p => p.id !== id))
+        })
     }
     
     return (
