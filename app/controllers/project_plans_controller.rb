@@ -5,4 +5,10 @@ class ProjectPlansController < ApplicationController
         render json: projectPlan
     end
 
+    def destroy
+        projectPlan= ProjectPlan.find_by(id: params[:id])
+        projectPlan.destroy
+        head :no_content
+      end
+
 end

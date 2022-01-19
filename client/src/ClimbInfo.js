@@ -6,7 +6,7 @@ import ResourceItem from './ResourceItem'
 import UpDateProject from './UpDateProject'
 import ProjectPlan from './ProjectPlan'
 
-function ClimbInfo(projectsArr, setProjectsArr) {
+function ClimbInfo({workoutPlans, projectsArr, setProjectsArr}) {
 
     const [climb, setClimb] = useState([])
     const [showUpdateForm, setShowUpdateForm] = useState(false)
@@ -120,7 +120,7 @@ function ClimbInfo(projectsArr, setProjectsArr) {
                     {climbResource}
                    </ul>
                 </div>
-                <ProjectPlan />
+                <ProjectPlan workoutPlans={workoutPlans}/>
             </div>
         </div>
     )

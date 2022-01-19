@@ -49,7 +49,7 @@ function App() {
             <ProjectPage  projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectListId={projectListId} setProjectId={setProjectId}/>
           </Route>
           <Route exact path="/climb/:id">
-            <ClimbInfo projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectId={projectId}/>
+            <ClimbInfo workoutPlans={workoutPlans} projectsArr={projectsArr} setProjectsArr={setProjectsArr} projectId={projectId}/>
           </Route>
           <Route exact path="/workoutplans">
             <WorkoutPlansPage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
