@@ -3,7 +3,7 @@ function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExe
     const id= climbingDrill.id
 
     function handleDelete() {
-        fetch(`session_climbing_drills/${id}`, {
+        fetch(`/session_climbing_drills/${id}`, {
             method: "DELETE",
             headers:{'Content-Type' : 'application/json'}
         })
