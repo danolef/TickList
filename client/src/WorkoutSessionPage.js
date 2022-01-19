@@ -26,6 +26,16 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
 
     const allWorkoutSessionsCards = workoutSessions.length > 0 ? workoutSessions.map(workoutSessionData => <WorkoutSessionCard key ={workoutSessionData.id} workoutSessionData={workoutSessionData} workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/>)
     : null
+    console.log(workoutSessions)
+
+    const workoutPlanName = workoutSessions.length > 0 ? 
+            <>
+            <h1>{workoutSessions[0].workout_plan.name}</h1>
+            </>
+            : 
+            <>
+            <h1>Add Your First Session</h1>
+            </>
 
     return (
         <div>
@@ -34,7 +44,7 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
                     <NavBar/>
                 </div>
                 <div className="row">
-                    <h1>Workout Sessions</h1>
+                    {workoutPlanName}
                     <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
