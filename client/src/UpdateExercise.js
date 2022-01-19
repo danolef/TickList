@@ -1,9 +1,9 @@
 import { useState } from "react";
 import {useParams} from 'react-router-dom'
 
-function UpdateExercise({exercise, sessionExercises, setSessionExercises}) {
+function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr}) {
 
-        
+    const sessionExerciseId= exercise.id    
     const id = exercise.workout_exercise.id
     const [updateExerciseData, setUpdateExerciseData] = useState({
         name: exercise.workout_exercise.name,
@@ -12,10 +12,12 @@ function UpdateExercise({exercise, sessionExercises, setSessionExercises}) {
         reps: exercise.workout_exercise.reps,
         sets: exercise.workout_exercise.sets,
         notes: exercise.workout_exercise.notes,
-        // workout_session_id: id
+        session_exercise_id: sessionExerciseId
     })
    
-
+    console.log(sessionExerciseId)
+    console.log(sessionExercisesArr)
+    console.log(id)
     function handleUpdateSubmit(e){
         e.preventDefault();
         fetch(`/workout_exercises/${id}`, {
@@ -28,13 +30,13 @@ function UpdateExercise({exercise, sessionExercises, setSessionExercises}) {
       .then(res => res.json())
       .then(updateExercise => {
           console.log(updateExercise)
-        // setProjectsArr(projectsArr.map(exercise => {
-        //       if(project.id === updateExercise.id){
-        //           return updateExercise
-        //       } else {
-        //           return project
-        //       }
-        //   }))
+          setSessionExercisesArr(sessionExercisesArr.map(sessExercise => {
+              if(sessExercise.id === updateExercise.id){
+                  return updateExercise
+              } else {
+                  return sessExercise
+              }
+          }))
       })
   }
 

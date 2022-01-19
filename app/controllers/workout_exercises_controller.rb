@@ -9,7 +9,8 @@ class WorkoutExercisesController < ApplicationController
     def update
       exercise= WorkoutExercise.find_by(id: params[:id])
       exercise.update!({name:params[:name], weight:params[:weight], duration:params[:duration], reps:params[:reps], sets:params[:sets], notes:params[:notes]})
-      render json: exercise
+      sessionExercise= SessionExercise.find_by(id: params[:session_exercise_id]) 
+      render json: sessionExercise
     end
 
     private
