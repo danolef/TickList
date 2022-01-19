@@ -6,6 +6,12 @@ class WorkoutExercisesController < ApplicationController
         render json: newSessionExercise, status: :created
     end
 
+    def update
+      exercise= WorkoutExercise.find_by(id: params[:id])
+      exercise.update!({name:params[:name], weight:params[:weight], duration:params[:duration], reps:params[:reps], sets:params[:sets], notes:params[:notes]})
+      render json: climb
+    end
+
     private
 
     def exercise_params

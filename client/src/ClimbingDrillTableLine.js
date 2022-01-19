@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import UpdateClimbingDrill from './UpdateClimbingDrill'
+
 function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExercises}) {
 
     const id= climbingDrill.id
+    const [updateForm, setUpdateForm] = useState(false)
 
     function handleDelete() {
         fetch(`/session_climbing_drills/${id}`, {
@@ -11,6 +15,11 @@ function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExe
             setSessionExercises(sessionExercises.filter(p => p.id !== id))
         })
     }
+
+    function showUpdateForm() {
+        setUpdateForm(!updateForm)
+    }
+    
 
     return (
         <>
@@ -25,7 +34,8 @@ function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExe
             <td>{climbingDrill.climbing_drill.sets}</td>
             <td>{climbingDrill.climbing_drill.notes}</td>
             </tr>
-            <button type="button" className="btn btn-secondary">Edit</button>
+            <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
+            {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 

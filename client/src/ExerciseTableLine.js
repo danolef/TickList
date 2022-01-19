@@ -1,7 +1,10 @@
+import { useState } from 'react'
+import UpdateExercise from './UpdateExercise'
 
 function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
 
     const id= exercise.id
+    const [updateForm, setUpdateForm] = useState(false)
 
     function handleDelete() {
         fetch(`/session_exercises/${id}`, {
@@ -11,6 +14,10 @@ function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
         .then(() => {
             setSessionExercises(sessionExercises.filter(p => p.id !== id))
         })
+    }
+
+    function showUpdateForm() {
+        setUpdateForm(!updateForm)
     }
     
     return (
@@ -24,7 +31,8 @@ function ExerciseTableLine ({exercise, sessionExercises, setSessionExercises}) {
             <td>{exercise.workout_exercise.sets}</td>
             <td>{exercise.workout_exercise.notes}</td>
             </tr>
-            <button type="button" className="btn btn-secondary">Edit</button>
+            <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
+            {updateForm ? <UpdateExercise exercise={exercise} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 
