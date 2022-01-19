@@ -45,16 +45,16 @@ function ProjectPlan({workoutPlans}) {
                    <h3 className="col">Workout Plan: </h3>
                    <form>
                     <fieldset >
-                        <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Add a Workout Plan</label>
-                        <select id="disabledSelect" class="form-select">
+                        <div className="mb-3">
+                        <label for="disabledSelect" className="form-label">Add a Workout Plan</label>
+                        <select id="disabledSelect" className="form-select">
                             <option>alskdjfj</option>
                             <option>alskaedsfdjfj</option>
                         </select>
                         </div>
-                        <div class="mb-3">
+                        <div className="mb-3">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </fieldset>
                     </form>
                    {workoutPlanLink}

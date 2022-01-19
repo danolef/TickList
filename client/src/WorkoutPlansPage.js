@@ -15,6 +15,8 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
         })
       }, [])
 
+      console.log(workoutPlans)
+
 
       function showAddForm() {
           setAddForm(!addForm)

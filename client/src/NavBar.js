@@ -24,7 +24,7 @@ function NavBar({setUser}) {
             <div className="container-fluid">
                 <a className="navbar-brand" href="/home">Home</a>
                 <a className="navbar-brand" href="/projectlist">Tick Lists</a>
-                <a className="navbar-brand" href="workoutplans">Workout Plans</a>
+                <a className="navbar-brand" href="/workoutplans">Workout Plans</a>
                 <button onClick={handleLogout}>
                     Log Out
                 </button>
