@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useParams} from 'react-router-dom'
 
-function AddExercise({sessionExercises, setSessionExercises}) {
+function AddExercise({sessionExercisesArr, setSessionExercisesArr}) {
     
     const {id} = useParams()
     const [exerciseData, setExerciseData] = useState({
@@ -28,7 +28,8 @@ function AddExercise({sessionExercises, setSessionExercises}) {
           if (res.ok) {
             res.json()
             .then((newExercise) => {
-              setSessionExercises([newExercise, ...sessionExercises])
+              // console.log(newExercise)
+              setSessionExercisesArr([newExercise, ...sessionExercisesArr])
             })
           } else {
             res.json()
