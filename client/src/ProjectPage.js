@@ -18,7 +18,6 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
         })
       }, [])
 
-    console.log(projectList) 
       
     function showAddForm() {
         setAddForm(!addForm)
@@ -27,7 +26,17 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
         const allProjectCards = projectsArr.length > 0 ? projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/>)
       : null
       
-        // const projetListName = projectsArr.length > 0 ? projectsArr.project_list.name : null
+        const projetListName = projectsArr.length > 0 ? 
+            <>
+            <h1>{projectsArr[0].project_list.name}</h1>
+            </>
+            : 
+            <>
+            <h1>Add Your First Project</h1>
+            </>
+
+        // const projetListName = projectsArr.project_list.name
+
     
 
     return (
@@ -37,7 +46,7 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
                     <NavBar/>
                 </div>
                 <div className="row">
-                    {/* <h1>{projetListName}</h1> */}
+                    {projetListName}
                     <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
