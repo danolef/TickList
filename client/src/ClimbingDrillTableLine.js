@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import UpdateClimbingDrill from './UpdateClimbingDrill'
 
-function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExercises}) {
+function ClimbingDrillTableLine ({climbingDrill, sessionClimbingDrillArr, setSessionClimbingDrillArr}) {
 
     const id= climbingDrill.id
     const [updateForm, setUpdateForm] = useState(false)
@@ -12,7 +12,7 @@ function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExe
             headers:{'Content-Type' : 'application/json'}
         })
         .then(() => {
-            setSessionExercises(sessionExercises.filter(p => p.id !== id))
+            setSessionClimbingDrillArr(sessionClimbingDrillArr.filter(p => p.id !== id))
         })
     }
 
@@ -35,7 +35,7 @@ function ClimbingDrillTableLine ({climbingDrill, sessionExercises, setSessionExe
             <td>{climbingDrill.climbing_drill.notes}</td>
             </tr>
             <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
-            {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
+            {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 

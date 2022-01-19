@@ -11,7 +11,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
   
     const [addForm, setAddForm] = useState(false)
     const [addClimbingForm, setaddClimbingForm] = useState(false)
-    const [sessionExercisesArr, setSessionExercisesArr] =useState([])
+    const [sessionExercisesArr, setSessionExercisesArr] = useState([])
+    const [sessionClimbingDrillArr, setSessionClimbingDrillArr] = useState([])
 
     const {id} = useParams()
     
@@ -21,7 +22,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
         .then((exercises) => {
             console.log(exercises)
             setSessionExercises([exercises])
-            setSessionExercisesArr(exercises.session_exercises) 
+            setSessionExercisesArr(exercises.session_exercises)
+            setSessionClimbingDrillArr(exercises.session_climbing_drills) 
         })
     }, [])
 
@@ -37,7 +39,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     
     console.log(sessionExercises)
     
-    const climbingDrill= sessionExercises.length > 0  ? sessionExercises[0].session_climbing_drills?.map(climbingDrill => <ClimbingDrillTableLine key={climbingDrill.id} climbingDrill={climbingDrill} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>)
+    const climbingDrill= sessionExercises.length > 0  ? sessionClimbingDrillArr?.map(climbingDrill => <ClimbingDrillTableLine key={climbingDrill.id} climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/>)
     : null
 
     const exercises= sessionExercises.length > 0 ? sessionExercisesArr.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr}/>)
