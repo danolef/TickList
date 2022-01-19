@@ -6,6 +6,12 @@ class ResourcesController < ApplicationController
         render json: newResource, status: :created
       end
 
+      def destroy
+        resource= Resource.find_by(id: params[:id])
+        resource.destroy
+        head :no_content
+      end
+
 private
 
 def resource_params

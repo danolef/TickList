@@ -17,7 +17,7 @@ function ResourceItem({resource}) {
         <div>
             <div className="row">
                 <li>{resource.site_url}</li>
-                <a href= "`${resource.site_url}`" className="card-link">Go to Link</a>
+                {/* <a href= "`${resource.site_url}`" className="card-link">Go to Link</a> */}
                 <button onClick={handleDelete} className="btn btn-primary">Delete</button>   
              </div>
         </div>
