@@ -1,4 +1,6 @@
 
+import {Link} from 'react-router-dom'
+
 function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
 
     const completed = projectData.completed
@@ -32,7 +34,7 @@ function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Grade:</strong> {projectData.climb.grade} </h6>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectData.climb.climb_type} </h6>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Completed:</strong> {completed ? "yes" : "no"}</h6>
-                            <a href= {`/climb/${id}`} className="card-link">Climb Info</a>
+                            <Link to= {`/climb/${id}`} className="card-link">Climb Info</Link>
                             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
                         </div>
                     </div>

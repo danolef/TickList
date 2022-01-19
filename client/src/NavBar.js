@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function NavBar({setUser}) {
   
@@ -22,9 +22,9 @@ function NavBar({setUser}) {
             <div className="row">
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/home">Home</a>
-                <a className="navbar-brand" href="/projectlist">Tick Lists</a>
-                <a className="navbar-brand" href="/workoutplans">Workout Plans</a>
+                <Link className="navbar-brand" to="/home">Home</Link>
+                <Link className="navbar-brand" to="/projectlist">Tick Lists</Link>
+                <Link className="navbar-brand" to="/workoutplans">Workout Plans</Link>
                 <button onClick={handleLogout}>
                     Log Out
                 </button>

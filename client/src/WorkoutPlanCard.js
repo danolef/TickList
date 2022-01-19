@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import UpdateWorkoutPlan from "./UpdateWorkoutPlan";
 
 function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
@@ -30,7 +31,7 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
                             <h5 className="card-title">{workoutPlansData.name}</h5>
                             <p className="card-text"><strong>Description:</strong> {workoutPlansData.Description}</p>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Focus:</strong> {workoutPlansData.Focus} </h6>
-                            <a href={`/workoutsessions/${id}`} className="card-link">Workout Sessions</a>
+                            <Link to={`/workoutsessions/${id}`} className="card-link">Workout Sessions</Link>
                             <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
                             {showUpdateForm ? <UpdateWorkoutPlan workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>

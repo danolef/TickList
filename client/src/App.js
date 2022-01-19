@@ -52,10 +52,9 @@ function App() {
             <ExercisesPage sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>
           </Route>
           <Route exact path="/home">
-            <HomePage setUser={setUser}/>
+            <HomePage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans} projectList={projectList} setProjecList={setProjecList} setUser={setUser}/>
           </Route>
           <Route path="/">
-            {/* <LoginSignUpPage/> */}
             {user ? <HomePage setUser={setUser}/> : <LoginSignUpPage setUser={setUser}/>}
           </Route>
         </Switch>

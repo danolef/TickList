@@ -7,13 +7,13 @@ function ProjectListPage({projectList, setProjecList}) {
 
     const [addForm, setAddForm] = useState(false)
 
-    useEffect( () => {
-        fetch("/project_lists")
-        .then ((res) => res.json())
-        .then((projects) => {
-          setProjecList(projects) 
-        })
-      }, [])
+    // useEffect( () => {
+    //     fetch("/project_lists")
+    //     .then ((res) => res.json())
+    //     .then((projects) => {
+    //       setProjecList(projects) 
+    //     })
+    //   }, [])
 
       function showAddForm() {
           setAddForm(!addForm)

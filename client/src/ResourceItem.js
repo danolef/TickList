@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function ResourceItem({resource, resources, setResources}) {
     
@@ -18,6 +19,8 @@ function ResourceItem({resource, resources, setResources}) {
             <div className="row">
                 <li>{resource.site_url}</li>
                 {/* <a href= "`${resource.site_url}`" className="card-link">Go to Link</a> */}
+                {/* <Link to= "`${resource.site_url}`" className="card-link">Go to Link</Link> */}
+
                 <button onClick={handleDelete} className="btn btn-primary">Delete</button>   
              </div>
         </div>

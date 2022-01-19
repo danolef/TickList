@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import {Link , useParams} from 'react-router-dom'
 
 function ProjectPlan({workoutPlans}) {
 
 
     const [projectPlanArr, setProjectPlanArr] = useState([])
     const {id} = useParams()
+
+    console.log(workoutPlans)
 
     useEffect( () => {
         fetch(`/project_plans/${id}`)
@@ -28,7 +30,7 @@ function ProjectPlan({workoutPlans}) {
       const workoutPlanLink = projectPlanArr.length > 0 ? projectPlanArr.map((projectData) => 
         <>
             <h3>{projectData.workout_plan.name}</h3>
-            <a href= {`/workoutsessions/${projectData.workout_plan.id}`} className="card-link">Go to Workout Plan</a>
+            <Link to= {`/workoutsessions/${projectData.workout_plan.id}`} className="card-link">Go to Workout Plan</Link>
             <button type="button" onClick={()=>handleDelete(projectData.id)} className="btn btn-secondary">Delete</button>
 
         </>
