@@ -6,6 +6,12 @@ class ClimbingDrillsController < ApplicationController
         render json: newSessionClimbingDrill, status: :created
     end
 
+    def update
+      updateClimbingDrill= ClimbingDrill.find_by(id: params[:id])
+      updateClimbingDrill.update!({name:params[:name], climb_type:params[:climb_type], grade:params[:grade], climb_attributes:params[:climb_attributes], duration:params[:duration], reps:params[:reps], sets:params[:sets], notes:params[:notes]})
+      render json: updateClimbingDrill
+    end
+
     private
 
     def exercise_params
