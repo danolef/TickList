@@ -74,7 +74,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                 <div className="row">
                     <h2>Climbing Drills</h2>
                     <button type="button" onClick={showAddClimbingForm} className="btn btn-secondary">Add Climbing Drill</button>
-                    {addClimbingForm ? <AddClimbingDrill sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
+                    {addClimbingForm ? <AddClimbingDrill sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/> : null}
                 <table className="table">
                     <thead>
                         <tr>
