@@ -5,25 +5,32 @@ import NavBar from "./NavBar"
 import ExerciseTableLine from './ExerciseTableLine'
 import ClimbingDrillTableLine from './ClimbingDrillTableLine'
 import AddExercise from './AddExercise'
+import AddClimbingDrill from './AddClimbingDrill'
 
 function ExercisesPage({sessionExercises, setSessionExercises}) {
   
     const [addForm, setAddForm] = useState(false)
+    const [addClimbingForm, setaddClimbingForm] = useState(false)
+
     const {id} = useParams()
     
     useEffect( () => {
         fetch(`/workout_sessions/${id}`)
         .then ((res) => res.json())
         .then((exercises) => {
-            setSessionExercises(exercises) 
+            setSessionExercises([exercises]) 
         })
     }, [])
 
+    // console.log(sessionExercises)
 
+    function showAddClimbingForm() {
+        setaddClimbingForm(!addClimbingForm)
+    }
+    
     function showAddForm() {
         setAddForm(!addForm)
     }
-    
     //   function handleAddResourceSubmit(e) {
     //     e.preventDefault();
     //     fetch(`/projects/${id}/resources`, {
@@ -65,15 +72,13 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     //       return <h2>Loading. . .</h2>
     //     }
 
-    console.log("sessionExercises.workout_exercises:", sessionExercises.workout_exercises)
-    console.log("sessionExercises.length:", sessionExercises.length)
-        
-    const exercises= sessionExercises.length === undefined ? sessionExercises.workout_exercises.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise}/>)
+    console.log(sessionExercises)
+    
+    const climbingDrill= sessionExercises.length > 0  ? sessionExercises[0].session_climbing_drills?.map(climbingDrill => <ClimbingDrillTableLine key={climbingDrill.id} climbingDrill={climbingDrill} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>)
+    : null
+
+    const exercises= sessionExercises.length > 0 ? sessionExercises[0].session_exercises.map(exercise => <ExerciseTableLine key={exercise.id} exercise={exercise} sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/>)
         : null
-
-    // const climbingDrill= sessionExercises.climbing_drills.length === undefined ? sessionExercises.climbing_drills.map(climbingDrill => <ExerciseTableLine key={climbingDrill.id} climbingDrill={climbingDrill}/>)
-    // : null
-
 
     return (
         <div>
@@ -103,7 +108,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                 </div> 
                 <div className="row">
                     <h2>Climbing Drills</h2>
-                    <button type="button" className="btn btn-secondary">Add Climbing Drill</button>
+                    <button type="button" onClick={showAddClimbingForm} className="btn btn-secondary">Add Climbing Drill</button>
+                    {addClimbingForm ? <AddClimbingDrill sessionExercises={sessionExercises} setSessionExercises={setSessionExercises}/> : null}
                 <table className="table">
                     <thead>
                         <tr>
@@ -117,7 +123,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                         <th scope="col">Notes</th>
                         </tr>
                     </thead>
-                        {/* {climbingDrill} */}
+                        {climbingDrill}
                     </table>
                 </div> 
             </div>
