@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {useParams} from 'react-router-dom'
 
-function UpdateClimbingDrill({climbingDrill, sessionExercises, setSessionExercises}) {
+
+function UpdateClimbingDrill({climbingDrill, sessionClimbingDrillArr, setSessionClimbingDrillArr}) {
     
+    const sessionClimbingDrillId= climbingDrill.id
     const id = climbingDrill.climbing_drill.id
     const [updateClimbingDrillData, setUpdateClimbingDrillData] = useState({
         name: climbingDrill.climbing_drill.name,
@@ -13,7 +14,7 @@ function UpdateClimbingDrill({climbingDrill, sessionExercises, setSessionExercis
         reps: climbingDrill.climbing_drill.reps,
         sets: climbingDrill.climbing_drill.sets,
         notes: climbingDrill.climbing_drill.notes,
-        // workout_session_id: id
+        session_climbing_drill_id: sessionClimbingDrillId
     })
    
 
@@ -27,8 +28,14 @@ function UpdateClimbingDrill({climbingDrill, sessionExercises, setSessionExercis
         body: JSON.stringify(updateClimbingDrillData)
       })
       .then(res => res.json())
-      .then(updateExercise => {
-          console.log(updateExercise)
+      .then(updateClimbingDrill => {
+        setSessionClimbingDrillArr(sessionClimbingDrillArr.map(sessClimbingDrill => {
+            if(sessClimbingDrill.id === updateClimbingDrill.id){
+                return updateClimbingDrill
+            } else {
+                return sessClimbingDrill
+            }
+          }))
         })
     }
   

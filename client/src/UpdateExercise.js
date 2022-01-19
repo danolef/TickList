@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useParams} from 'react-router-dom'
+
 
 function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr}) {
 
@@ -15,9 +15,7 @@ function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr})
         session_exercise_id: sessionExerciseId
     })
    
-    console.log(sessionExerciseId)
-    console.log(sessionExercisesArr)
-    console.log(id)
+    
     function handleUpdateSubmit(e){
         e.preventDefault();
         fetch(`/workout_exercises/${id}`, {
