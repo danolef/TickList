@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import ResourceItem from './ResourceItem'
 import UpDateProject from './UpDateProject'
+import ProjectPlan from './ProjectPlan'
 
 function ClimbInfo(projectsArr, setProjectsArr) {
 
@@ -119,10 +120,7 @@ function ClimbInfo(projectsArr, setProjectsArr) {
                     {climbResource}
                    </ul>
                 </div>
-                <div className="row ">
-                   <h3 className="col">Workout Plan: </h3>
-                   <a href= " " className="card-link">Workout Plan</a>
-                </div>
+                <ProjectPlan />
             </div>
         </div>
     )
