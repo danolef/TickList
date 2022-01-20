@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 import NavBar from './NavBar'
 import ProjectListCard from './ProjectListCard'
 import AddProjectList from './AddProjectList'
 
 function ProjectListPage({projectList, setProjecList}) {
-
+    
+    let history = useHistory()
     const [addProjectListForm, setAddProjectListForm] = useState(false)
 
     useEffect( () => {
@@ -17,6 +19,10 @@ function ProjectListPage({projectList, setProjecList}) {
 
       function showAddProjectListForm() {
         setAddProjectListForm(!addProjectListForm)
+      }
+
+      function handleGoBack() {
+        history.push("/home")
       }
 
     const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>)
@@ -38,7 +44,7 @@ function ProjectListPage({projectList, setProjecList}) {
                 <div className="row">
                     {allProjectCards}
                 </div>
-            
+                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 import NavBar from './NavBar'
 import WorkoutPlanCard from './WorkoutPlanCard'
 import AddWorkoutPlan from './AddWorkoutPlan'
@@ -6,6 +7,7 @@ import AddWorkoutPlan from './AddWorkoutPlan'
 function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
 
     const [addForm, setAddForm] = useState(false)
+    let history = useHistory()
 
     useEffect( () => {
         fetch("/workout_plans")
@@ -15,8 +17,9 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
         })
       }, [])
 
-      console.log(workoutPlans)
-
+      function handleGoBack() {
+        history.push("/home")
+      }
 
       function showAddForm() {
           setAddForm(!addForm)
@@ -41,7 +44,7 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
                 <div className="row">
                     {allWorkoutPlansCards}
                 </div>
-            
+                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )

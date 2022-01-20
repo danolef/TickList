@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import NavBar from './NavBar'
 import WorkoutSessionCard from './WorkoutSessionCard'
 import AddWorkoutSession from './AddWorkoutSession'
@@ -8,8 +8,7 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
 
     const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
-
-    console.log(workoutSessions)
+    let history = useHistory()
 
     useEffect( () => {
         fetch(`/workout_plans/${id}`)
@@ -19,6 +18,9 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
         })
       }, [])
 
+      function handleGoBack() {
+        history.push("/workoutplans")
+      }
 
       function showAddForm() {
           setAddForm(!addForm)
@@ -53,7 +55,7 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
                 <div className="row">
                     {allWorkoutSessionsCards}
                 </div>
-            
+                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )

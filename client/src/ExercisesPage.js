@@ -1,5 +1,5 @@
 
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import ExerciseTableLine from './ExerciseTableLine'
@@ -15,7 +15,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     const [sessionClimbingDrillArr, setSessionClimbingDrillArr] = useState([])
 
     const {id} = useParams()
-    
+    let history = useHistory()
+
     useEffect( () => {
         fetch(`/workout_sessions/${id}`)
         .then ((res) => res.json())
@@ -25,6 +26,10 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
             setSessionClimbingDrillArr(exercises.session_climbing_drills) 
         })
     }, [])
+
+    function handleGoBack() {
+        history.goBack()
+      }
 
     function showAddClimbingForm() {
         setaddClimbingForm(!addClimbingForm)
@@ -86,6 +91,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                         {climbingDrill}
                     </table>
                 </div> 
+                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import ResourceItem from './ResourceItem'
@@ -16,6 +16,8 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
     const [resourceFormData, setResourceFormData] = useState({
         site_url: "",
     })
+
+    let history = useHistory()
   
     useEffect( () => {
         fetch(`/projects/${id}`)
@@ -62,6 +64,10 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
     function handleFormChange(e){
         setResourceFormData({...resourceFormData, [e.target.name]:e.target.value})
     }
+
+    function handleGoBack() {
+      history.goBack()
+  }
       
       if (climb.length === 0) {
           return <h2>Loading. . .</h2>
@@ -119,6 +125,7 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
                    </ul>
                 </div>
                 <ProjectPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
+                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )
