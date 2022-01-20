@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UpDateProject({climb, setClimb}) {
+function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
 
     const id= climb.id
     const [updateProjectData, setUpdateProjectData] = useState({
@@ -28,6 +28,7 @@ function UpDateProject({climb, setClimb}) {
       .then(updateProject => {
           setClimb(updateProject)
       })
+      setShowUpdateForm(!showUpdateForm)
   }
     
 

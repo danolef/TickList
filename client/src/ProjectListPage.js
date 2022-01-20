@@ -5,7 +5,7 @@ import AddProjectList from './AddProjectList'
 
 function ProjectListPage({projectList, setProjecList}) {
 
-    const [addForm, setAddForm] = useState(false)
+    const [addProjectListForm, setAddProjectListForm] = useState(false)
 
     useEffect( () => {
         fetch("/project_lists")
@@ -15,8 +15,8 @@ function ProjectListPage({projectList, setProjecList}) {
         })
       }, [])
 
-      function showAddForm() {
-          setAddForm(!addForm)
+      function showAddProjectListForm() {
+        setAddProjectListForm(!addProjectListForm)
       }
 
     const allProjectCards = projectList.map(projectListData => <ProjectListCard key ={projectListData.id} projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>)
@@ -30,10 +30,10 @@ function ProjectListPage({projectList, setProjecList}) {
                 </div>
                 <div className="row">
                     <h1>My Projects</h1>
-                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                    <button type="button" className="btn btn-light" onClick={showAddProjectListForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
-                    {addForm ? <AddProjectList projectList={projectList} setProjecList={setProjecList}/> : null}
+                    {addProjectListForm ? <AddProjectList projectList={projectList} setProjecList={setProjecList} addProjectListForm={addProjectListForm} setAddProjectListForm={setAddProjectListForm}/> : null}
                 </div>
                 <div className="row">
                     {allProjectCards}

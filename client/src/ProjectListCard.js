@@ -36,7 +36,7 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
                             <Link to={`/projectlists/${id}`} className="card-link">Projects</Link>
                             <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
-                            {showUpdateForm ? <UpDateProjectList projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>
+                            {showUpdateForm ? <UpDateProjectList projectListData={projectListData} projectList={projectList} setProjecList={setProjecList} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}
                         </div>
                     </div>

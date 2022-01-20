@@ -48,6 +48,7 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
             })
           }
         })
+        setshowAddResourceForm(!showAddResourceForm)
     }
       
       function handleShowUpdateForm() {
@@ -79,7 +80,7 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
                     <h1>Climb Info</h1>
                 </div>
                 <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
-                            {showUpdateForm ? <UpDateProject climb={climb} setClimb={setClimb} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/>
+                            {showUpdateForm ? <UpDateProject climb={climb} setClimb={setClimb} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}
                 <div className="row">
                    <h2>Name: {climb.climb.name}</h2>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UpDateProjectList({projectList, setProjecList, projectListData}) {
+function UpDateProjectList({projectList, setProjecList, projectListData, showUpdateForm, setShowUpdateForm}) {
 
     const id= projectListData.id
     const [updateProjectListData, setUpdateProjectListData] = useState({
@@ -30,6 +30,7 @@ function UpDateProjectList({projectList, setProjecList, projectListData}) {
               }
           }))
       })
+      setShowUpdateForm(!showUpdateForm)
   }
     
 

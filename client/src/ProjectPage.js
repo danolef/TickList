@@ -45,7 +45,7 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
                     <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
-                    {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/> : null}
+                    {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
                 <div className="row">
                     {allProjectCards}

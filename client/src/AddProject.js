@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddProject({projectsArr, setProjectsArr, projectListId}) {
+function AddProject({projectsArr, setProjectsArr, projectListId, addForm, setAddForm}) {
 
     const [climbData, setClimbData] = useState({
         name:'',
@@ -36,6 +36,7 @@ function AddProject({projectsArr, setProjectsArr, projectListId}) {
             })
           }
         })
+        setAddForm(!addForm)
     }
 
   

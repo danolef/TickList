@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddProjectList({projectList, setProjecList}) {
+function AddProjectList({addProjectListForm, setAddProjectListForm, projectList, setProjecList}) {
 
     const [projectListData, setprojectListData] = useState({
         name: '',
@@ -32,6 +32,7 @@ function AddProjectList({projectList, setProjecList}) {
             })
           }
         })
+        setAddProjectListForm(!addProjectListForm)
     }
 
     function handleSignupChange(e){
