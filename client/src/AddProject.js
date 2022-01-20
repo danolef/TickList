@@ -27,7 +27,6 @@ function AddProject({projectsArr, setProjectsArr, projectListId}) {
           if (res.ok) {
             res.json()
             .then((newProject) => {
-              console.log(newProject)
                 setProjectsArr([newProject, ...projectsArr])
             })
           } else {

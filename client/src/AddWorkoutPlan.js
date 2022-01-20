@@ -10,7 +10,6 @@ function AddWorkoutPlan({workoutPlans, setWorkoutPlans}) {
 
     function handleSignupSubmit(e){
         e.preventDefault();
-        console.log(e)
         fetch("/workout_plans", {
           method: "POST",
           headers: {

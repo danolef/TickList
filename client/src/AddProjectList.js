@@ -12,7 +12,6 @@ function AddProjectList({projectList, setProjecList}) {
 
     function handleSignupSubmit(e){
         e.preventDefault();
-        console.log(e)
         fetch("/project_lists", {
           method: "POST",
           headers: {
@@ -37,7 +36,6 @@ function AddProjectList({projectList, setProjecList}) {
 
     function handleSignupChange(e){
         setprojectListData({...projectListData, [e.target.name]:e.target.value})
-        console.log(e.target.value)
     }
 
     return(

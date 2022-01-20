@@ -28,7 +28,6 @@ function AddExercise({sessionExercisesArr, setSessionExercisesArr}) {
           if (res.ok) {
             res.json()
             .then((newExercise) => {
-              // console.log(newExercise)
               setSessionExercisesArr([newExercise, ...sessionExercisesArr])
             })
           } else {

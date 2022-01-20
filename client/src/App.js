@@ -55,7 +55,7 @@ function App() {
             <HomePage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans} projectList={projectList} setProjecList={setProjecList} setUser={setUser}/>
           </Route>
           <Route path="/">
-            {user ? <HomePage setUser={setUser}/> : <LoginSignUpPage setUser={setUser}/>}
+            {user ? <HomePage workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans} projectList={projectList} setProjecList={setProjecList} setUser={setUser}/> : <LoginSignUpPage setUser={setUser}/>}
           </Route>
         </Switch>
       </div>

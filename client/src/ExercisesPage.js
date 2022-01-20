@@ -20,14 +20,11 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
         fetch(`/workout_sessions/${id}`)
         .then ((res) => res.json())
         .then((exercises) => {
-            console.log(exercises)
             setSessionExercises([exercises])
             setSessionExercisesArr(exercises.session_exercises)
             setSessionClimbingDrillArr(exercises.session_climbing_drills) 
         })
     }, [])
-
-    console.log(sessionExercisesArr)
 
     function showAddClimbingForm() {
         setaddClimbingForm(!addClimbingForm)
@@ -36,9 +33,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
     function showAddForm() {
         setAddForm(!addForm)
     }
-    
-    console.log(sessionExercises)
-    
+        
     const climbingDrill= sessionExercises.length > 0  ? sessionClimbingDrillArr?.map(climbingDrill => <ClimbingDrillTableLine key={climbingDrill.id} climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/>)
     : null
 

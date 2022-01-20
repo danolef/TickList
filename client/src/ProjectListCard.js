@@ -7,8 +7,6 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
     const [showUpdateForm, setShowUpdateForm] = useState(false)
         
     const id= projectListData.id
-
-    console.log(projectList)
     
     function handleDelete() {
         fetch(`project_lists/${id}`, {

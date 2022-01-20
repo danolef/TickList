@@ -14,6 +14,7 @@ function HomePage({setUser, projectList, setProjecList, workoutPlans, setWorkout
       setProjecList(projects) 
     })
   }, [])
+  console.log("projectList:", projectList)
 
   useEffect( () => {
     fetch("/workout_plans")
@@ -23,13 +24,13 @@ function HomePage({setUser, projectList, setProjecList, workoutPlans, setWorkout
     })
   }, [])
     
-  const allProjectCards = projectList.map((projectListData, index) => (
+  const allProjectCards = projectList.length > 0 ? projectList.map((projectListData, index) => (
   index < 4 && <ProjectListCard key ={projectListData.id} projectListData={projectListData} projectList={projectList} setProjecList={setProjecList}/>
-  ))
+  )) : null
 
-  const allWorkoutPlansCards = workoutPlans.map((workoutPlansData, index) => (
+  const allWorkoutPlansCards = workoutPlans.length > 0 ? workoutPlans.map((workoutPlansData, index) => (
   index < 4 && <WorkoutPlanCard key ={workoutPlansData.id} workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
-  ))
+  )) : null
   
   
   return (

@@ -7,13 +7,13 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
 
     const [addForm, setAddForm] = useState(false)
 
-    // useEffect( () => {
-    //     fetch("/workout_plans")
-    //     .then ((res) => res.json())
-    //     .then((workoutPlansArr) => {
-    //         setWorkoutPlans(workoutPlansArr) 
-    //     })
-    //   }, [])
+    useEffect( () => {
+        fetch("/workout_plans")
+        .then ((res) => res.json())
+        .then((workoutPlansArr) => {
+            setWorkoutPlans(workoutPlansArr) 
+        })
+      }, [])
 
       console.log(workoutPlans)
 

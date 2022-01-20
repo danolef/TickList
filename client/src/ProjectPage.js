@@ -8,7 +8,6 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
 
     const [addForm, setAddForm] = useState(false)
     const {id} = useParams()
-    console.log(projectsArr)
 
       useEffect( () => {
         fetch(`/project_lists/${id}`)
@@ -24,7 +23,7 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
     }
 
         const allProjectCards = projectsArr.length > 0 ? projectsArr.map((projectData) => <ProjectCard key ={projectData.id} projectData={projectData} setProjectId={setProjectId} projectsArr={projectsArr} setProjectsArr={setProjectsArr}/>)
-      : null
+            : null
       
         const projetListName = projectsArr.length > 0 ? 
             <>
@@ -34,10 +33,6 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
             <>
             <h1>Add Your First Project</h1>
             </>
-
-        // const projetListName = projectsArr.project_list.name
-
-    
 
     return (
         <div>

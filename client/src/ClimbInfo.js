@@ -26,9 +26,6 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
         })
       }, [])
 
-      // console.log(climb)
-      // console.log(resources)
-
       function handleAddResourceSubmit(e) {
         e.preventDefault();
         fetch(`/projects/${id}/resources`, {
@@ -42,7 +39,6 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
           if (res.ok) {
             res.json()
             .then((newResource) => {
-                // console.log(newResource)
                 setResources([...resources, newResource])
             })
           } else {

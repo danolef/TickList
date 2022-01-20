@@ -16,7 +16,7 @@ class WorkoutPlansController < ApplicationController
     
       def update
         workoutPlan= WorkoutPlan.find_by(id: params[:id])
-        workoutPlan.update!({name:params[:name], Description:params[:Description], Focus:params[:focus]})
+        workoutPlan.update!({name:params[:name], Description:params[:Description], Focus:params[:Focus]})
         render json: workoutPlan
       end
     

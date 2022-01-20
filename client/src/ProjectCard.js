@@ -7,9 +7,6 @@ function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
     const climbId= projectData.climb.id
     const id= projectData.id
 
-    console.log("projectData.id:", projectData.id)
-    // console.log("projectsArr:", projectsArr)
-
     setProjectId(climbId)
 
     function handleDelete() {
