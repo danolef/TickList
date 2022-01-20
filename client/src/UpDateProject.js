@@ -3,6 +3,7 @@ import { useState } from "react";
 function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
 
     const id= climb.id
+    const [climbCompleted, setClimbCompleted]= useState(climb.completed)
     const [updateProjectData, setUpdateProjectData] = useState({
         name: climb.climb.name,
         location: climb.climb.location,
@@ -10,9 +11,12 @@ function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
         climb_type: climb.climb.climb_type,
         climb_attribute: climb.climb.climb_attribute,
         beta: climb.beta,
-        completed: climb.completed,
+        completed: climbCompleted,
         project_list_id: climb.project_list.id
     })
+    
+    console.log(climbCompleted)
+    console.log(updateProjectData)
 
     
     function handleUpdateSubmit(e){
@@ -35,12 +39,23 @@ function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
     function handleFormChange(e){
         setUpdateProjectData({...updateProjectData, [e.target.name]:e.target.value})
     }
+
+    function handleCompleted(){
+        setClimbCompleted(!climbCompleted)
+        setUpdateProjectData({...updateProjectData, completed: !climbCompleted})
+    }
     
     return(
         <div>
             <div className="container-fluid">
                 <div className="row">
                 <form onSubmit={handleUpdateSubmit}>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" onClick={handleCompleted} className="form-check-input" id="completed"/>
+                    <label className="form-check-label" >
+                        {climbCompleted ? "Uncheck if not completed" : "Check if Completed"}
+                    </label>
+                </div>
                 <div className="mb-3">
                     <label className="form-label">Name</label>
                     <input name="name" value={updateProjectData.name} onChange={handleFormChange} type="text" className="form-control" id="name"/>
