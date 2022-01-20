@@ -32,7 +32,7 @@ function ExerciseTableLine ({exercise, sessionExercisesArr, setSessionExercisesA
             <td>{exercise.workout_exercise.notes}</td>
             </tr>
             <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
-            {updateForm ? <UpdateExercise exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr}/> : null}
+            {updateForm ? <UpdateExercise exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr} updateForm={updateForm} setUpdateForm={setUpdateForm}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 

@@ -51,7 +51,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                 <div className="row">
                     <h2>Fitness Exercises</h2>
                     <button type="button" onClick={showAddForm} className="btn btn-secondary">Add Exercise</button>
-                    {addForm ? <AddExercise sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr}/> : null}
+                    {addForm ? <AddExercise sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr} addForm={addForm} setAddForm={setAddForm}/> : null}
                 <table className="table">
                     <thead>
                         <tr>
@@ -69,7 +69,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                 <div className="row">
                     <h2>Climbing Drills</h2>
                     <button type="button" onClick={showAddClimbingForm} className="btn btn-secondary">Add Climbing Drill</button>
-                    {addClimbingForm ? <AddClimbingDrill sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/> : null}
+                    {addClimbingForm ? <AddClimbingDrill sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr} addClimbingForm={addClimbingForm} setaddClimbingForm={setaddClimbingForm}/> : null}
                 <table className="table">
                     <thead>
                         <tr>

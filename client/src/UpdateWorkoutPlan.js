@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UpdateWorkoutPlan({workoutPlansData, workoutPlans, setWorkoutPlans}) {
+function UpdateWorkoutPlan({workoutPlansData, workoutPlans, setWorkoutPlans, showUpdateForm, setShowUpdateForm}) {
 
     const id= workoutPlansData.id
     const [updateWorkoutPlanData, setupdateWorkoutPlanData] = useState({
@@ -28,6 +28,7 @@ function UpdateWorkoutPlan({workoutPlansData, workoutPlans, setWorkoutPlans}) {
               }
           }))
       })
+      setShowUpdateForm(!showUpdateForm)
   }
     
 

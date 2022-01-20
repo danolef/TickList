@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useParams} from 'react-router-dom'
 
-function AddWorkoutSession({workoutSessions, setWorkoutSessions}) {
+function AddWorkoutSession({workoutSessions, setWorkoutSessions, addForm, setAddForm}) {
 
     const {id} = useParams()
     const [sessionData, setSessionData] = useState({
@@ -34,6 +34,7 @@ function AddWorkoutSession({workoutSessions, setWorkoutSessions}) {
             })
           }
         })
+        setAddForm(!addForm)
     }
 
   

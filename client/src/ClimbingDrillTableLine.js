@@ -35,7 +35,7 @@ function ClimbingDrillTableLine ({climbingDrill, sessionClimbingDrillArr, setSes
             <td>{climbingDrill.climbing_drill.notes}</td>
             </tr>
             <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
-            {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr}/> : null}
+            {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr} updateForm={updateForm} setUpdateForm={setUpdateForm}/> : null}
             <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 

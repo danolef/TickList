@@ -48,7 +48,7 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
                     <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
-                    {addForm ? <AddWorkoutSession workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/> : null}
+                    {addForm ? <AddWorkoutSession workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
                 <div className="row">
                     {allWorkoutSessionsCards}

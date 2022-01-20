@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr}) {
+function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr, updateForm, setUpdateForm}) {
 
     const sessionExerciseId= exercise.id    
     const id = exercise.workout_exercise.id
@@ -36,6 +36,7 @@ function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr})
               }
           }))
       })
+      setUpdateForm(!updateForm)
   }
 
     function handleSignupChange(e){

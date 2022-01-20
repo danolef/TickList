@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useParams} from 'react-router-dom'
 
-function AddClimbingDrill({sessionClimbingDrillArr, setSessionClimbingDrillArr}) {
+function AddClimbingDrill({sessionClimbingDrillArr, setSessionClimbingDrillArr, addClimbingForm, setaddClimbingForm}) {
     
     const {id} = useParams()
     const [climbingDrillData, setclimbingDrillData] = useState({
@@ -39,6 +39,7 @@ function AddClimbingDrill({sessionClimbingDrillArr, setSessionClimbingDrillArr})
             })
           }
         })
+        setaddClimbingForm(!addClimbingForm)
     }
 
   

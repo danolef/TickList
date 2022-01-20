@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function UpdateClimbingDrill({climbingDrill, sessionClimbingDrillArr, setSessionClimbingDrillArr}) {
+function UpdateClimbingDrill({climbingDrill, sessionClimbingDrillArr, setSessionClimbingDrillArr, updateForm, setUpdateForm}) {
     
     const sessionClimbingDrillId= climbingDrill.id
     const id = climbingDrill.climbing_drill.id
@@ -37,6 +37,7 @@ function UpdateClimbingDrill({climbingDrill, sessionClimbingDrillArr, setSession
             }
           }))
         })
+        setUpdateForm(!updateForm)
     }
   
     function handleSignupChange(e){

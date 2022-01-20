@@ -34,7 +34,7 @@ function WorkoutSessionCard({workoutSessionData, workoutSessions, setWorkoutSess
                             <Link to={`/exercises/${id}`} className="card-link">Session Exercises</Link>
                             <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
-                            {showUpdateForm ? <UpdateWorkoutSession workoutSessionData={workoutSessionData} workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions}/>
+                            {showUpdateForm ? <UpdateWorkoutSession workoutSessionData={workoutSessionData} workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}
                         </div>
                     </div>

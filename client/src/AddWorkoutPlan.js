@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddWorkoutPlan({workoutPlans, setWorkoutPlans}) {
+function AddWorkoutPlan({workoutPlans, setWorkoutPlans, addForm, setAddForm}) {
 
     const [workoutFormData, setWorkoutFormData] = useState({
         name: '',
@@ -30,6 +30,7 @@ function AddWorkoutPlan({workoutPlans, setWorkoutPlans}) {
             })
           }
         })
+        setAddForm(!addForm)
     }
 
     function handleSignupChange(e){

@@ -36,7 +36,7 @@ function WorkoutPlansPage({workoutPlans, setWorkoutPlans}) {
                     <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
                 </div>
                 <div className="row">
-                    {addForm ? <AddWorkoutPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/> : null}
+                    {addForm ? <AddWorkoutPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
                 <div className="row">
                     {allWorkoutPlansCards}

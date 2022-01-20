@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useParams} from 'react-router-dom'
 
-function AddExercise({sessionExercisesArr, setSessionExercisesArr}) {
+function AddExercise({sessionExercisesArr, setSessionExercisesArr, addForm, setAddForm}) {
     
     const {id} = useParams()
     const [exerciseData, setExerciseData] = useState({
@@ -37,6 +37,7 @@ function AddExercise({sessionExercisesArr, setSessionExercisesArr}) {
             })
           }
         })
+        setAddForm(!addForm)
     }
 
   

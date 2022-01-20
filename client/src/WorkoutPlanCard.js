@@ -34,7 +34,7 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
                             <Link to={`/workoutsessions/${id}`} className="card-link">Workout Sessions</Link>
                             <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary">Delete</button>
                             <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
-                            {showUpdateForm ? <UpdateWorkoutPlan workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
+                            {showUpdateForm ? <UpdateWorkoutPlan workoutPlansData={workoutPlansData} workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}
                         </div>
                     </div>
