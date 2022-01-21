@@ -7,7 +7,7 @@ import UpDateProject from './UpDateProject'
 import ProjectPlan from './ProjectPlan'
 import Photos from './Photos'
 
-function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr}) {
+function ClimbInfo({workoutPlans, setWorkoutPlans}) {
 
     const [climb, setClimb] = useState([])
     const [showUpdateForm, setShowUpdateForm] = useState(false)
@@ -127,7 +127,7 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
                 </div>
                 <ProjectPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
                 <div>
-                   <Photos/>
+                   <Photos climb={climb}/>
                 </div>
                 <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
               </div>
