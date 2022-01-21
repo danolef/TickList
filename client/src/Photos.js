@@ -61,7 +61,7 @@ function Photos ({climb}) {
         }
         fetch("/photos", configObj)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setPhotoArr([...photoArr, data]))
     }
 
     const photoCardDisplay = photoArr.length > 0 ? photoArr.map((photo) => <PhotoCard key ={photo.id} photo={photo}/>)
