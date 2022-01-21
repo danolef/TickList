@@ -37,7 +37,7 @@ function Photos ({climb}) {
                         console.log(data)
                         setPhotoPublicId(data.public_id)
                         setPhotoDisplay(data.secure_url)
-                        photoSubmitBE()
+                        photoSubmitBE(data.public_id, data.secure_url)
                     })
                 } else {
                     alert("You did not select a valid image type")
@@ -48,11 +48,11 @@ function Photos ({climb}) {
         }
     }
 
-    function photoSubmitBE() {
+    function photoSubmitBE(id, url) {
         const newPhoto ={
             project_id: climb.id,
-            public_id: photoPublicId,
-            photo_url: photoDisplay
+            public_id: id,
+            photo_url: url
         }
         const configObj ={
             method: "POST",
@@ -64,7 +64,7 @@ function Photos ({climb}) {
         .then(data => console.log(data))
     }
 
-    const photoCardDisplay = photoArr > 0 ? photoArr.map((photo) => <PhotoCard key ={photo.id} photo={photo}/>)
+    const photoCardDisplay = photoArr.length > 0 ? photoArr.map((photo) => <PhotoCard key ={photo.id} photo={photo}/>)
     : null
 
     return (

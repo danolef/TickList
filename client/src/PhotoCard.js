@@ -2,6 +2,8 @@
 
 function PhotoCard({photo}) {
 
+    console.log("photo:", photo.photo_url)
+
     return (
         <>
         <div className="container-fluid">
