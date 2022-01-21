@@ -6,5 +6,7 @@ class Project < ApplicationRecord
   has_many :workout_plans, through: :project_plans
 
   has_many :resources
+
+  has_many :photos
   
 end

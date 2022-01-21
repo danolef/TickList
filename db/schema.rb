@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_215739) do
+ActiveRecord::Schema.define(version: 2022_01_21_165136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2022_01_13_215739) do
     t.string "climb_attribute"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "public_id"
+    t.string "photo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_photos_on_project_id"
   end
 
   create_table "project_lists", force: :cascade do |t|
@@ -135,6 +144,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_215739) do
     t.index ["workout_plan_id"], name: "index_workout_sessions_on_workout_plan_id"
   end
 
+  add_foreign_key "photos", "projects"
   add_foreign_key "project_lists", "users"
   add_foreign_key "project_plans", "projects"
   add_foreign_key "project_plans", "workout_plans"

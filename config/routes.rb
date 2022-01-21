@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   resources :session_climbing_drills
   resources :session_exercises
   resources :project_plans

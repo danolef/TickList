@@ -5,6 +5,7 @@ import NavBar from "./NavBar"
 import ResourceItem from './ResourceItem'
 import UpDateProject from './UpDateProject'
 import ProjectPlan from './ProjectPlan'
+import Photos from './Photos'
 
 function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr}) {
 
@@ -125,8 +126,11 @@ function ClimbInfo({workoutPlans, setWorkoutPlans, projectsArr, setProjectsArr})
                    </ul>
                 </div>
                 <ProjectPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
+                <div>
+                   <Photos/>
+                </div>
                 <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
-            </div>
+              </div>
         </div>
     )
 }
