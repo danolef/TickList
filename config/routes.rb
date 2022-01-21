@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   post '/projects/:id/resources', to: "resources#create"
   post '/climb/:id/project_plans', to: "project_plans#create"
 
+  post 'cloudinary/photo/destroy', to: "photos#destroy"
+
   get '*path',
       to: 'fallback#index',
       constraints: ->(req) { !req.xhr? && req.format.html? }

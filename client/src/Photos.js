@@ -64,7 +64,7 @@ function Photos ({climb}) {
         .then(data => setPhotoArr([...photoArr, data]))
     }
 
-    const photoCardDisplay = photoArr.length > 0 ? photoArr.map((photo) => <PhotoCard key ={photo.id} photo={photo}/>)
+    const photoCardDisplay = photoArr.length > 0 ? photoArr.map((photo) => <PhotoCard key ={photo.id} photo={photo} photoArr={photoArr} setPhotoArr={setPhotoArr}/>)
     : null
 
     return (
