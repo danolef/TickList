@@ -23,7 +23,7 @@ function WorkoutPlanCard({workoutPlansData, workoutPlans, setWorkoutPlans}) {
     }
     
     return (
-        <div className="col-4 ms-4 mb-4 p-1 border border-dark">
+        <div className="col-4 ms-4 mb-4 p-0 border border-dark">
             
                     <div className="card" /*style="'width: 18rem;"*/>
                         <div className="card-body">
