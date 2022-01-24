@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+#homePage{
+  background-image: url(homepage.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  }
+
+  h1{
+    font-size: 100px;
+    color: black;
+    text-shadow: -1px 1px 2px #a84701,
+            1px 1px 2px #a84701,
+            1px -1px 0 #a84701,
+            -1px -1px 0 #a84701;
+  }

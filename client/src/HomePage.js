@@ -34,20 +34,20 @@ function HomePage({setUser, projectList, setProjecList, workoutPlans, setWorkout
   
   
   return (
-      <div> 
+      <div id="homepage"> 
         <div className="container-fluid">
           <div className= "row">  
             <NavBar setUser= {setUser}/>
-            <h1>HomePage</h1>
+            <h1 className="mt-3">HomePage</h1>
            </div> 
            <div className="row">
-                <Link className="nav-link active" to="/projectlist">My Tick Lists</Link>
+                <Link className="nav-link active w-50 mb-4 mt-5" to="/projectlist">My Tick Lists</Link>
            </div>
            <div className= "row">
              {allProjectCards}
            </div>
-           <div className="row">
-                <Link className="nav-link active" to="workoutplans">My Workout Plans</Link>
+           <div className="row mt-5">
+                <Link className="nav-link active w-50 mb-4 mt-5" to="workoutplans">My Workout Plans</Link>
            </div>
            <div className= "row">
              {allWorkoutPlansCards}

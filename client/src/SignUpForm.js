@@ -44,32 +44,34 @@ function SignUpForm({setUser}) {
     
     <div className="container-fluid">
         <div className="row">
-            <div className="row">
-              <h5>Are you New?</h5>
-              <h5>Sign Up</h5>
+            <div className="row mb-3">
+              <h5 className="text-center">Are you New? Sign Up</h5>
+              {/* <h5>Sign Up</h5> */}
             </div>
         </div>
     </div>
     <div className="container-fluid">
         <div className="row">
-        <form onSubmit={handleSignupSubmit}>
-          <div className="mb-3">
-              <label className="form-label">Email address</label>
-              <input name="email" value={signupData.email} onChange={handleSignupChange} type="email" className="form-control" id="email"/>
+        <form className="row d-flex justify-content-center" onSubmit={handleSignupSubmit}>
+          <div className="col-6 mb-4">
+              {/* <label className="form-label">Email address</label> */}
+              <input name="email" placeholder="Email Address" value={signupData.email} onChange={handleSignupChange} type="email" className="form-control text-center" id="email"/>
           </div>
-          <div className="mb-3">
-              <label className="form-label">User Name</label>
-              <input name="username" value={signupData.username} onChange={handleSignupChange} type="text" className="form-control" id="username"/>
+          <div className="col-6 mb-4">
+              {/* <label className="form-label">User Name</label> */}
+              <input name="username" placeholder="User Name" value={signupData.username} onChange={handleSignupChange} type="text" className="form-control text-center" id="username"/>
           </div>
-          <div className="mb-3">
-              <label className="form-label">Password</label>
-              <input name="password" value={signupData.password} onChange={handleSignupChange} type="password" className="form-control" id="password"/>
+          <div className="col-6 mb-4">
+              {/* <label className="form-label">Password</label> */}
+              <input name="password" placeholder="Password" value={signupData.password} onChange={handleSignupChange} type="password" className="form-control text-center" id="password"/>
           </div>
-          <div className="mb-3">
-              <label className="form-label">Password Confirmation</label>
-              <input name="password_confirmation" value={signupData.password_confirmation} onChange={handleSignupChange} type="password" className="form-control" id="password_confirmation"/>
+          <div className="col-6 mb-4">
+              {/* <label className="form-label">Password Confirmation</label> */}
+              <input name="password_confirmation" placeholder="Password Confirmation" value={signupData.password_confirmation} onChange={handleSignupChange} type="password" className="form-control text-center" id="password_confirmation"/>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <div className="d-flex justify-content-center">
+          <button type="submit" className="btn btn-primary col-3 mb-5 border border-dark" id="button">Submit</button>
+          </div>
         </form>
         </div>
     </div>
