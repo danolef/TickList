@@ -34,13 +34,15 @@ function HomePage({setUser, projectList, setProjecList, workoutPlans, setWorkout
   
   
   return (
-      <div id="homepage"> 
+      <div> 
         <div className="container-fluid">
-          <div className= "row">  
+          <div className= "row bg-white fixed-top mb-5 ms-3 me-3">  
             <NavBar setUser= {setUser}/>
-            <h1 className="mt-3">HomePage</h1>
-           </div> 
+           </div > 
+          <div/>
+          <div id="homepage" className="container-fluid mt-5">
            <div className="row">
+            <h1 className="mt-3">HomePage</h1>
                 <Link className="nav-link active w-50 mb-4 mt-5" to="/projectlist">My Tick Lists</Link>
            </div>
            <div className= "row">
@@ -51,6 +53,7 @@ function HomePage({setUser, projectList, setProjecList, workoutPlans, setWorkout
            </div>
            <div className= "row">
              {allWorkoutPlansCards}
+           </div>
            </div>
         </div>
       </div> 

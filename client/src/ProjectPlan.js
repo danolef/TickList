@@ -68,37 +68,57 @@ function ProjectPlan({workoutPlans, setWorkoutPlans}) {
     
       const workoutPlanLink = projectPlanArr.length > 0 ? projectPlanArr.map((projectData) => 
         <>
-            <h3>{projectData.workout_plan.name}</h3>
+          <div className="col-3 ms-4 mb-4 p-0 border border-dark">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title mb-3"> <strong>Workout Name:</strong> {projectData.workout_plan.name} </h5>
+                <Link to= {`/workoutsessions/${projectData.workout_plan.id}`} className="card-link">Go to Workout Plan</Link>
+                <div className='row'>
+                <button type="button" onClick={()=>handleDelete(projectData.id)} className="btn btn-secondary col-4 ms-2 mt-4">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className='row mb-3'>
+            <h3 className="col-5">{projectData.workout_plan.name}</h3>
+            <button type="button" onClick={()=>handleDelete(projectData.id)} className="btn btn-secondary col-2">Delete</button>
+          </div>
+          <div className='row mb-5'>
             <Link to= {`/workoutsessions/${projectData.workout_plan.id}`} className="card-link">Go to Workout Plan</Link>
-            <button type="button" onClick={()=>handleDelete(projectData.id)} className="btn btn-secondary">Delete</button>
-
+            </div> */}
         </>
       )
       : null
 
       const workoutPlanSelect = workoutPlans.map(plan => <>
-        <option key={plan.id} value={plan.id}>{plan.name}</option>
+        <option className='col-5' key={plan.id} value={plan.id}>{plan.name}</option>
       </>)
 
     return (
         <div >
             <div className="container-fluid">
-            <div className="row ">
-                   <h3 className="col">Workout Plan: </h3>
+            <div className="row mb-3">
+                   <h2 className='bg-white col-3'>Workout Plan: </h2>
+            </div>
+            <div className="row mb-5">
                    <form onSubmit={addProjectPlan}>
                     <fieldset >
-                        <div className="mb-3">
-                        <label className="form-label">Add a Workout Plan</label>
-                        <select onChange={handlePlanChange} id="select" className="form-select">
-                            <option>Select a Workout Plan</option>
+                      <div className='row'>
+                        <label className="form-label  bg-white mb-3 col-3">Add a Workout Plan</label>
+                      </div>
+                      <div className='row'>
+                        <div className='col-5'>
+                        <select onChange={handlePlanChange} id="select" className="col-5 form-select">
+                            <option className='col-5'>Select a Workout Plan</option>
                             {workoutPlanSelect}
                         </select>
                         </div>
-                        <div className="mb-3">
-                        </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-secondary col-1">Add</button>
+                      </div>
                     </fieldset>
                     </form>
+            </div>
+            <div className="row mb-4">
                    {workoutPlanLink}
                 </div>
             </div>

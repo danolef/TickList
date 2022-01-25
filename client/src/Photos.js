@@ -70,17 +70,23 @@ function Photos ({climb}) {
     return (
         <div>
             <div className="container-fluid">
-                <div className="row">
-                    <h2>Photos</h2>
+                <div className="row mb-4">
+                    <h2 className="bg-white col-3">Photos</h2>
                 </div>
                 <div className="row">
                     <form onSubmit={photoSubmitCloud}>
-                    <label className="form-label">Add Photo</label>
-                    <input onChange={photoChangeHandler} name="photo" type="file" className="form-control" id="photo"/>
-                    <button type="submit" className="btn btn-primary">Add</button>
+                    <div className="row">
+                        <label className="form-label bg-white col-2">Add Photo</label>
+                    </div>
+                     <div className="row">
+                         <div className="col-5">
+                        <input onChange={photoChangeHandler} name="photo" type="file" className="form-control col-5" id="photo"/>
+                    </div>
+                    <button type="submit" className="btn btn-primary col-2">Add</button>
+                 </div>
                     </form>
                 </div>
-                <div className="row">
+                <div className="row mt-5">
                     {photoCardDisplay}
                 </div>
             </div>

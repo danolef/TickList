@@ -36,18 +36,18 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
             </>
             : 
             <>
-            <h1>Add Your First Project</h1>
+            <h2>Add Your First Project</h2>
             </>
 
     return (
-        <div>
-            <div className="container">
-                <div className="row">
+        <div id="projectpage">
+            <div className="container-fluid">
+                <div className="row bg-white fixed-top">
                     <NavBar/>
                 </div>
-                <div className="row">
+                <div className="row mt-5">
                     {projetListName}
-                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                    <button type="button" className="btn btn-light col-4 mt-5 mb-4 ms-4" onClick={showAddForm}><strong>+ADD</strong></button>
                 </div>
                 <div className="row">
                     {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr} addForm={addForm} setAddForm={setAddForm}/> : null}
@@ -55,7 +55,9 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
                 <div className="row">
                     {allProjectCards}
                 </div>
-                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
+                
+                <button type="button" className="btn btn-light mt-5 mb-5 ms-4" onClick={handleGoBack}><strong>Back</strong></button>
+                
             </div>
         </div>
     )

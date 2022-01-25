@@ -19,7 +19,37 @@
         height: auto;
         width: 100%;
     }
-  
+
+    #projectlist{
+        background-image: url(ProjectList.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
+    #projectpage{
+        background-image: url(ProjectPage.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
+    #climbpage{
+        background-image: url(ClimbPage.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
     h1{
       font-size: 100px;
       color: black;
@@ -38,6 +68,10 @@
        font-size: 3rem;
        color: black;
    }
+
+   /* .navbar-brand {
+    color:rgb(233, 62, 0),
+   } */
 
    .card-title {
     color:rgb(233, 62, 0),

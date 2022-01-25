@@ -34,8 +34,8 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectListData.climb_type} </h6>
                             <Link to={`/projectlists/${id}`} className="card-link">Projects</Link>
                             <div className="row mt-4"> 
-                            <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary w-50 ">Delete</button>
-                            <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary w-50 ">Edit</button>
+                            <button type="button" onClick={() => handleDelete(id)} className="btn btn-secondary w-50">Delete</button>
+                            <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary w-50">Edit</button>
                             </div>
                             {showUpdateForm ? <UpDateProjectList projectListData={projectListData} projectList={projectList} setProjecList={setProjecList} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}

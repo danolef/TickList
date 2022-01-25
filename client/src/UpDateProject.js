@@ -48,42 +48,51 @@ function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
     return(
         <div>
             <div className="container-fluid">
-                <div className="row">
                 <form onSubmit={handleUpdateSubmit}>
+                <div className="row ms-3">
                 <div class="mb-3 form-check">
                     <input type="checkbox" onClick={handleCompleted} className="form-check-input" id="completed"/>
                     <label className="form-check-label" >
                         {climbCompleted ? "Uncheck if not completed" : "Check if Completed"}
                     </label>
                 </div>
-                <div className="mb-3">
+                </div>
+                <div className="row ms-2">
+                <div className="mb-3 col-3">
                     <label className="form-label">Name</label>
                     <input name="name" value={updateProjectData.name} onChange={handleFormChange} type="text" className="form-control" id="name"/>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 col-5">
                     <label className="form-label">Location</label>
                     <input name="location" value={updateProjectData.location} onChange={handleFormChange} type="text" className="form-control" id="location"/>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 col-3">
                     <label className="form-label">Grade</label>
                     <input name="grade" value={updateProjectData.grade} onChange={handleFormChange} type="text" className="form-control" id="grade"/>
                 </div>
-                <div className="mb-3">
+                </div>
+                <div className="row ms-2">
+                <div className="mb-3 col-5">
                     <label className="form-label">Climb Type</label>
                     <input name="climb_type" value={updateProjectData.climb_type} onChange={handleFormChange} type="text" className="form-control" id="climb_type"/>
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 col-5">
                     <label className="form-label">Climb Attribute</label>
                     <input name="climb_attribute" value={updateProjectData.climb_attribute} onChange={handleFormChange} type="text" className="form-control" id="climb_attribute"/>
                 </div>
-                <div className="mb-3">
-                    <label className="form-label">Beta</label>
-                    <input name="beta" value={updateProjectData.beta} onChange={handleFormChange} type="text" className="form-control" id="beta"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <div className="row ms-2">
+                <div className="mb-3 col-10">
+                    <label className="form-label">Beta</label>
+                    <textarea name="beta" value={updateProjectData.beta} onChange={handleFormChange} type="text" className="form-control" id="beta"/>
+                </div>
+                </div>
+                <div className="row mb-4">
+                <button type="submit" className="btn btn-secondary col-2">Submit</button>
+                </div>
                 </form>
                 </div>
-            </div>
+            
         </div>
 
     )

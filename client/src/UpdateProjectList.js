@@ -48,7 +48,7 @@ function UpDateProjectList({projectList, setProjecList, projectListData, showUpd
           </div>
           <div className="mb-3">
               <label className="form-label">Description</label>
-              <input name="description" value={updateProjectListData.description} onChange={handleFormChange} type="text" className="form-control" id="description"/>
+              <textarea name="description" value={updateProjectListData.description} onChange={handleFormChange} type="text" className="form-control" id="description"/>
           </div>
           <div className="mb-3">
               <label className="form-label">Location</label>

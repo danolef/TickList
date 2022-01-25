@@ -78,39 +78,41 @@ function ClimbInfo({workoutPlans, setWorkoutPlans}) {
        
 
     return (
-        <div>
+        <div id="climbpage">
             <div className="container-fluid">
-                <div className="row">
+                <div className="row bg-white fixed-top mb-5">
                     <NavBar/>
                 </div>
-                <div className="row">
+                <div className="row mt-5">
                     <h1>Climb Info</h1>
                 </div>
-                <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary">Edit</button>
+                <button type="button" onClick={handleShowUpdateForm} className="btn btn-secondary mt-3 mb-3 col-2">Edit</button>
                             {showUpdateForm ? <UpDateProject climb={climb} setClimb={setClimb} showUpdateForm={showUpdateForm} setShowUpdateForm={setShowUpdateForm}/>
                             : null}
-                <div className="row">
+                <div className="row mb-3 ms-1 col-5 bg-white">
                    <h2>Name: {climb.climb.name}</h2>
                 </div>
-                <div className="row">
+                <div className="row mb-2 ms-1 bg-white col-3 ">
                    <h3>Completed: {climb.completed ? "yes" : "no"} </h3>
                 </div>
-                <div className="row ">
-                   <h3 className="col">Location: {climb.climb.location}</h3>
-                   <h3 className="col">Grade: {climb.climb.grade}</h3>
-                   <h3 className="col">Climb Type: {climb.climb.climb_type}</h3>
+                <div className="row mb-2 ">
+                   <h3 className="col mb-2 ms-3 me-3 bg-white">Location: {climb.climb.location}</h3>
+                   <h3 className="col mb-2 bg-white">Grade: {climb.climb.grade}</h3>
+                   <h3 className="col mb-2 ms-3 me-3 bg-white">Climb Type: {climb.climb.climb_type}</h3>
                 </div>
-                <div className="row ">
-                   <h3 className="col">Climb Attributes: {climb.climb.climb_attribute}</h3>
+                <div className="row mb-2">
+                   <h3 className="col-6 ms-3 bg-white">Climb Attributes: {climb.climb.climb_attribute}</h3>
                 </div>
-                <div className="row ">
-                   <h3 className="col">Beta: {climb.beta}</h3>
+                <div className="row mb-2">
+                   <h3 className="col-10 ms-3 bg-white">Beta: {climb.beta}</h3>
                 </div>
-                <div className="row ">
-                   <h3 className="col">Resources: </h3>
-                   <button type="submit" onClick={handleShowAddResourceForm} className="btn btn-primary">Add Resource</button>
+                <div className="row mb-2">
+                  <div className='row'>
+                   <h3 className="ms-3 bg-white col-2">Resources: </h3>
+                   </div>
+                   <button type="submit" onClick={handleShowAddResourceForm} className="btn btn-secondary mt-3 mb-3 ms-3 col-2">Add Resource</button>
                    {showAddResourceForm ? 
-                      <div className="row">
+                      <div className="row mb-3">
                      <form onSubmit={handleAddResourceSubmit}>
                      <div className="mb-3">
                          <label className="form-label">Site Url</label>
@@ -126,10 +128,10 @@ function ClimbInfo({workoutPlans, setWorkoutPlans}) {
                    </ul>
                 </div>
                 <ProjectPlan workoutPlans={workoutPlans} setWorkoutPlans={setWorkoutPlans}/>
-                <div>
+                <div className='row'>
                    <Photos climb={climb}/>
                 </div>
-                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
+                <button type="button" className="btn btn-light mt-5 mb-5" onClick={handleGoBack}><strong>Back</strong></button>
               </div>
         </div>
     )
