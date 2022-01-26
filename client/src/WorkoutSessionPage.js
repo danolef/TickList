@@ -19,7 +19,8 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
       }, [])
 
       function handleGoBack() {
-        history.push("/workoutplans")
+        // history.push("/workoutplans")
+        history.goBack()
       }
 
       function showAddForm() {
@@ -47,7 +48,7 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
                 </div>
                 <div className="row mt-5">
                     {workoutPlanName}
-                    <button type="button" className="btn btn-light col-4 mt-5 mb-4 ms-4" onClick={showAddForm}><strong>+ Add</strong></button>
+                    <button type="button" className="btn btn-light col-3 mt-5 mb-4 ms-4" onClick={showAddForm}><strong>+ Add</strong></button>
                 </div>
                 <div className="row">
                     {addForm ? <AddWorkoutSession workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions} addForm={addForm} setAddForm={setAddForm}/> : null}

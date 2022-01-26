@@ -26,7 +26,7 @@ function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
                     <div className="card" /*style="'width: 18rem;"*/>
                         <div className="card-body">
                             <h5 className="card-title mb-4">{projectData.climb.name}</h5>
-                            <p class="card-text"><strong>Description:</strong> {projectData.description}</p>
+                            {/* <p class="card-text"><strong>Description:</strong> {projectData.description}</p> */}
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Location:</strong> {projectData.climb.location} </h6>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Grade:</strong> {projectData.climb.grade} </h6>
                             <h6 className="card-subtitle mb-2 text-muted"><strong>Climb Type:</strong> {projectData.climb.climb_type} </h6>

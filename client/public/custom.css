@@ -80,6 +80,10 @@
         width: 100%;
     }
 
+    .table{
+        width: 90%;
+    }
+
     h1{
       font-size: 100px;
       color: black;

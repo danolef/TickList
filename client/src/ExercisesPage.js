@@ -56,7 +56,7 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                     <h1>Fitness Exercises</h1>
                 </div> 
                 <div className="row ms-2">
-                    <button type="button" onClick={showAddForm} className="btn btn-light col-3 mt-5 mb-4 ms-4">Add Exercise</button>
+                    <button type="button" onClick={showAddForm} className="btn btn-light col-3 mt-3 mb-3 ms-4">Add Exercise</button>
                     {addForm ? <AddExercise sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
                 <div className="row">
@@ -76,8 +76,12 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                 </div> 
                 <div className="row ms-2">
                     <h1>Climbing Drills</h1>
-                    <button type="button" onClick={showAddClimbingForm} className="btn btn-light col-3 mt-5 mb-4 ms-4">Add Climbing Drill</button>
+                </div>
+                <div className="row ms-2">
+                    <button type="button" onClick={showAddClimbingForm} className="btn btn-light col-3 mt-3 mb-3 ms-4">Add Climbing Drill</button>
                     {addClimbingForm ? <AddClimbingDrill sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr} addClimbingForm={addClimbingForm} setaddClimbingForm={setaddClimbingForm}/> : null}
+                </div>
+                <div className="row">
                 <table className="table table-sm table-hover m-5 bg-white">
                     <thead>
                         <tr>
