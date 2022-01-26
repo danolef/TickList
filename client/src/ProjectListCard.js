@@ -24,7 +24,7 @@ function ProjectListCard({projectListData, projectList, setProjecList}) {
     
     return (
         // <div className="row">
-        <div className="col-4 ms-4 p-0 border border-dark">
+        <div className="col-3 ms-4 p-0 border border-dark">
                     <div className="card" >
                         <div className="card-body">
                             <h5 className="card-title mb-4 ">{projectListData.name}</h5>

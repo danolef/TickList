@@ -42,17 +42,17 @@ function AddWorkoutPlan({workoutPlans, setWorkoutPlans, addForm, setAddForm}) {
         <div className="container-fluid">
           <div className="row">
           <form onSubmit={handleSignupSubmit}>
-            <div className="mb-3">
-                <label className="form-label">Name</label>
-                <input name="name" value={workoutPlans.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
+            <div className="mb-3 col-6">
+                {/* <label className="form-label">Name</label> */}
+                <input name="name" placeholder="Name" value={workoutPlans.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Description</label>
-                <input name="Description" value={workoutPlans.Description} onChange={handleSignupChange} type="text" className="form-control" id="Description"/>
+            <div className="mb-3 col-6">
+                {/* <label className="form-label">Description</label> */}
+                <textarea name="Description" placeholder="Description" value={workoutPlans.Description} onChange={handleSignupChange} type="text" className="form-control" id="Description"/>
             </div>
-            <div className="mb-3">
-                <label className="form-label">Focus</label>
-                <input name="Focus" value={workoutPlans.Focus} onChange={handleSignupChange} type="text" className="form-control" id="Focus"/>
+            <div className="mb-3 col-6">
+                {/* <label className="form-label">Focus</label> */}
+                <input name="Focus" placeholder="Focus" value={workoutPlans.Focus} onChange={handleSignupChange} type="text" className="form-control" id="Focus"/>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>

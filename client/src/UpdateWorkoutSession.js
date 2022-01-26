@@ -46,7 +46,7 @@ function UpdateWorkoutSession({workoutSessionData, workoutSessions, setWorkoutSe
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Description</label>
-                        <input name="description" value={updateWorkoutSessionData.description} onChange={handleFormChange} type="text" className="form-control" id="description"/>
+                        <textarea name="description" value={updateWorkoutSessionData.description} onChange={handleFormChange} type="text" className="form-control" id="description"/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Gym Area</label>

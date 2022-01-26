@@ -47,17 +47,17 @@ function AddWorkoutSession({workoutSessions, setWorkoutSessions, addForm, setAdd
             <div className="container-fluid">
         <div className="row">
         <form onSubmit={handleSignupSubmit}>
-          <div className="mb-3">
-              <label className="form-label">Name</label>
-              <input name="name" value={sessionData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
+          <div className="mb-3 col-6">
+              {/* <label className="form-label">Name</label> */}
+              <input name="name" placeholder="Name" value={sessionData.name} onChange={handleSignupChange} type="text" className="form-control" id="name"/>
           </div>
-          <div className="mb-3">
-              <label className="form-label">Description</label>
-              <input name="description" value={sessionData.description} onChange={handleSignupChange} type="text" className="form-control" id="description"/>
+          <div className="mb-3 col-6">
+              {/* <label className="form-label">Description</label> */}
+              <textarea name="description" placeholder="Description" value={sessionData.description} onChange={handleSignupChange} type="text" className="form-control" id="description"/>
           </div>
-          <div className="mb-3">
-              <label className="form-label">Gym Area</label>
-              <input name="gym_area" value={sessionData.gym_area} onChange={handleSignupChange} type="text" className="form-control" id="gym_area"/>
+          <div className="mb-3 col-6">
+              {/* <label className="form-label">Gym Area</label> */}
+              <input name="gym_area" placeholder="Gym Area" value={sessionData.gym_area} onChange={handleSignupChange} type="text" className="form-control" id="gym_area"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>

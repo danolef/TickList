@@ -46,7 +46,7 @@ function UpdateWorkoutPlan({workoutPlansData, workoutPlans, setWorkoutPlans, sho
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Description</label>
-                        <input name="Description" value={updateWorkoutPlanData.Description} onChange={handleFormChange} type="text" className="form-control" id="Description"/>
+                        <textarea name="Description" value={updateWorkoutPlanData.Description} onChange={handleFormChange} type="text" className="form-control" id="Description"/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Focus</label>

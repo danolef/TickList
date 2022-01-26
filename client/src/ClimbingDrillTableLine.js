@@ -25,18 +25,18 @@ function ClimbingDrillTableLine ({climbingDrill, sessionClimbingDrillArr, setSes
         <>
         <tbody>
             <tr>
-            <th scope="row">{climbingDrill.climbing_drill.name}</th>
-            <td>{climbingDrill.climbing_drill.climb_type}</td>
-            <td>{climbingDrill.climbing_drill.grade}</td>
-            <td>{climbingDrill.climbing_drill.climb_attributes}</td>
-            <td>{climbingDrill.climbing_drill.duration}</td>
-            <td>{climbingDrill.climbing_drill.reps}</td>
-            <td>{climbingDrill.climbing_drill.sets}</td>
-            <td>{climbingDrill.climbing_drill.notes}</td>
+            <th className='col-2' scope="row">{climbingDrill.climbing_drill.name}</th>
+            <td className='col-1'>{climbingDrill.climbing_drill.climb_type}</td>
+            <td className='col-1'>{climbingDrill.climbing_drill.grade}</td>
+            <td className='col-1'>{climbingDrill.climbing_drill.climb_attributes}</td>
+            <td className='col-1'>{climbingDrill.climbing_drill.duration}</td>
+            <td className='col-1'>{climbingDrill.climbing_drill.reps}</td>
+            <td className='col-1'>{climbingDrill.climbing_drill.sets}</td>
+            <td className='col-3'>{climbingDrill.climbing_drill.notes}</td>
+            <td className='col-1'><button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
+            <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button></td>
             </tr>
-            <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
             {updateForm ? <UpdateClimbingDrill climbingDrill={climbingDrill} sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr} updateForm={updateForm} setUpdateForm={setUpdateForm}/> : null}
-            <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
         </tbody>
 
         </>

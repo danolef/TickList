@@ -11,7 +11,7 @@
     }
 
     #homepage{
-        background-image: url(tree.jpg);
+        background-image: url(HomePage2.jpg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -50,6 +50,36 @@
         width: 100%;
     }
 
+    #workoutplan{
+        background-image: url(WorkoutPlan.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
+    #workoutsession{
+        background-image: url(WorkoutSession.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
+    #exercisepage{
+        background-image: url(ExercisePage.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: auto;
+        width: 100%;
+    }
+
     h1{
       font-size: 100px;
       color: black;
@@ -66,7 +96,7 @@
 
    .nav-link {
        font-size: 3rem;
-       color: black;
+       color: white;
    }
 
    /* .navbar-brand {

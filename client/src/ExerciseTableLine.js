@@ -21,19 +21,21 @@ function ExerciseTableLine ({exercise, sessionExercisesArr, setSessionExercisesA
     }
     
     return (
-        <>
+        <> 
         <tbody>
             <tr>
-            <th scope="row">{exercise.workout_exercise.name}</th>
-            <td>{exercise.workout_exercise.weight}</td>
-            <td>{exercise.workout_exercise.duration}</td>
-            <td>{exercise.workout_exercise.reps}</td>
-            <td>{exercise.workout_exercise.sets}</td>
-            <td>{exercise.workout_exercise.notes}</td>
+            <th className='col-2' scope="row">{exercise.workout_exercise.name}</th>
+            <td className='col-1'>{exercise.workout_exercise.weight}</td>
+            <td className='col-1'>{exercise.workout_exercise.duration}</td>
+            <td className='col-1'>{exercise.workout_exercise.reps}</td>
+            <td className='col-1'>{exercise.workout_exercise.sets}</td>
+            <td className='col-3'>{exercise.workout_exercise.notes}</td>
+            <td className='col-1'><button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
+            <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button></td>
             </tr>
-            <button type="button" onClick={showUpdateForm} className="btn btn-secondary">Edit</button>
+            <div className='row ms-2'>
             {updateForm ? <UpdateExercise exercise={exercise} sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr} updateForm={updateForm} setUpdateForm={setUpdateForm}/> : null}
-            <button type="button" onClick={handleDelete} className="btn btn-secondary">Delete</button>
+            </div>
         </tbody>
 
         </>

@@ -46,18 +46,21 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
         : null
 
     return (
-        <div>
+        <div id="exercisepage">
             <div className="container-fluid">
-                <div className="row">
+                <div className="row bg-white fixed-top">
                     <NavBar/>
                 </div>   
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <h2>Fitness Exercises</h2>
-                    <button type="button" onClick={showAddForm} className="btn btn-secondary">Add Exercise</button>
+                <div className="row mt-5 ms-2">
+                    <h1>Fitness Exercises</h1>
+                </div> 
+                <div className="row ms-2">
+                    <button type="button" onClick={showAddForm} className="btn btn-light col-3 mt-5 mb-4 ms-4">Add Exercise</button>
                     {addForm ? <AddExercise sessionExercisesArr={sessionExercisesArr} setSessionExercisesArr={setSessionExercisesArr} addForm={addForm} setAddForm={setAddForm}/> : null}
-                <table className="table">
+                </div>
+                <div className="row">
+                <table className="table table-sm table-hover m-5 bg-white">
                     <thead>
                         <tr>
                         <th scope="col">Name</th>
@@ -71,11 +74,11 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                         {exercises}
                     </table>
                 </div> 
-                <div className="row">
-                    <h2>Climbing Drills</h2>
-                    <button type="button" onClick={showAddClimbingForm} className="btn btn-secondary">Add Climbing Drill</button>
+                <div className="row ms-2">
+                    <h1>Climbing Drills</h1>
+                    <button type="button" onClick={showAddClimbingForm} className="btn btn-light col-3 mt-5 mb-4 ms-4">Add Climbing Drill</button>
                     {addClimbingForm ? <AddClimbingDrill sessionClimbingDrillArr={sessionClimbingDrillArr} setSessionClimbingDrillArr={setSessionClimbingDrillArr} addClimbingForm={addClimbingForm} setaddClimbingForm={setaddClimbingForm}/> : null}
-                <table className="table">
+                <table className="table table-sm table-hover m-5 bg-white">
                     <thead>
                         <tr>
                         <th scope="col">Name</th>
@@ -91,9 +94,8 @@ function ExercisesPage({sessionExercises, setSessionExercises}) {
                         {climbingDrill}
                     </table>
                 </div> 
-                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
+                <button type="button" className="btn btn-light mt-5 mb-5 ms-4" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
-        </div>
     )
 }
 

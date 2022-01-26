@@ -52,7 +52,7 @@ function ProjectPage ({projectList, setProjectId, projectsArr, setProjectsArr}) 
                 <div className="row">
                     {addForm ? <AddProject projectListId={id} projectsArr={projectsArr} setProjectsArr={setProjectsArr} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
-                <div className="row">
+                <div className="row mt-4">
                     {allProjectCards}
                 </div>
                 

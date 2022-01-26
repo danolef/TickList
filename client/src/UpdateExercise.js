@@ -44,8 +44,8 @@ function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr, 
     }
     
     return(
-        <div>
-            <div className="container-fluid">
+    <div>
+    {/* <div className="container-fluid"> */}
         <div className="row">
         <form onSubmit={handleUpdateSubmit}>
           <div className="mb-3">
@@ -70,13 +70,13 @@ function UpdateExercise({exercise, sessionExercisesArr, setSessionExercisesArr, 
           </div>
           <div className="mb-3">
               <label className="form-label">Notes</label>
-              <input name="notes" value={updateExerciseData.notes} onChange={handleSignupChange} type="text" className="form-control" id="notes"/>
+              <textarea name="notes" value={updateExerciseData.notes} onChange={handleSignupChange} type="text" className="form-control" id="notes"/>
           </div>
           <button type="submit"  className="btn btn-primary">Submit</button>
-        </form>
+        </form>  
         </div>
-    </div>
-        </div>
+     {/* </div> */}
+     </div>
     )
 }
 

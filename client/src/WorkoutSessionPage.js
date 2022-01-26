@@ -40,22 +40,22 @@ function WorkOutSessionPage({workoutSessions, setWorkoutSessions}) {
             </>
 
     return (
-        <div>
-            <div className="container">
-                <div className="row">
+        <div id="workoutsession">
+            <div className="container-fluid">
+                <div className="row bg-white fixed-top">
                     <NavBar/>
                 </div>
-                <div className="row">
+                <div className="row mt-5">
                     {workoutPlanName}
-                    <button type="button" className="btn btn-light" onClick={showAddForm}><strong>+</strong></button>
+                    <button type="button" className="btn btn-light col-4 mt-5 mb-4 ms-4" onClick={showAddForm}><strong>+ Add</strong></button>
                 </div>
                 <div className="row">
                     {addForm ? <AddWorkoutSession workoutSessions={workoutSessions} setWorkoutSessions={setWorkoutSessions} addForm={addForm} setAddForm={setAddForm}/> : null}
                 </div>
-                <div className="row">
+                <div className="row mt-4">
                     {allWorkoutSessionsCards}
                 </div>
-                <button type="button" className="btn btn-light" onClick={handleGoBack}><strong>Back</strong></button>
+                <button type="button" className="btn btn-light mt-5 mb-5 ms-4" onClick={handleGoBack}><strong>Back</strong></button>
             </div>
         </div>
     )
