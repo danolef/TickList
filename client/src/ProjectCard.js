@@ -22,7 +22,7 @@ function ProjectCard({projectData, setProjectId, projectsArr, setProjectsArr}) {
     return (
         // <div>
         //     <div className="container">
-                <div className="col-4 ms-4 p-0 border border-dark">
+                <div className="col-3 ms-4 p-0 border border-dark">
                     <div className="card" /*style="'width: 18rem;"*/>
                         <div className="card-body">
                             <h5 className="card-title mb-4">{projectData.climb.name}</h5>
