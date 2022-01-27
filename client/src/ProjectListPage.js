@@ -35,7 +35,7 @@ function ProjectListPage({projectList, setProjecList}) {
                     <NavBar/>
                 </div>
                 <div className="row mt-5">
-                    <h1>My Projects</h1>
+                    <h1>My Project Lists</h1>
                     <button type="button" className="btn btn-light col-3 mt-5 mb-4 ms-4" onClick={showAddProjectListForm}><strong>+ ADD</strong></button>
                 </div>
                 <div className="row">
