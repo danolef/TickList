@@ -7,7 +7,7 @@ function UpDateProject({climb, setClimb, showUpdateForm, setShowUpdateForm}) {
     const [updateProjectData, setUpdateProjectData] = useState({
         name: climb.climb.name,
         location: climb.climb.location,
-        grade: climb.climb.location,
+        grade: climb.climb.grade,
         climb_type: climb.climb.climb_type,
         climb_attribute: climb.climb.climb_attribute,
         beta: climb.beta,
