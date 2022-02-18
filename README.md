@@ -32,7 +32,7 @@ Please visit https://dan-ticklist.herokuapp.com/ to experience the app for yours
 
 New to TickList? Create your own account. Existing users can log in.
 
-
+![Landing Page](Landing Page.png)
 
 
 
