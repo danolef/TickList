@@ -32,11 +32,51 @@ Please visit https://dan-ticklist.herokuapp.com/ to experience the app for yours
 
 New to TickList? Create your own account. Existing users can log in.
 
-![Landing Page](Landing Page.png)
+![Landing Page](LandingPage.png)
 
+### Home Page
 
+Note: "Tick List" is a broad term for all the climbs a climber wants to complete. A "Project" is a specific climb a climber is trying to complete 
 
+See your 4 most recently created Project Lists and Workout Plans. Users can navigate to the Project List and Workout Plan page. They can also delete any visible Project List or Workout Plan, edit the basic info for a Project List and Workout Plan and can navigate to the specific page for the Project List or Workout Plan.  
 
+![Home Page](HomePage.png)
+
+### Tick List Page
+
+This page allow users to see all their created Project Lists. Users can create a new project list from this page. They can delete any Project List and update the basic info. Clicking on the "Projects" in a Project List card will bring a User to the full list of Project associated with that Project List.
+
+![Project Page](ProjectPage.png)
+
+### Project List Page
+
+When a User clicks on the "Project" link on a Project List card they will be taken to this page. This page shows all the specific projects associated to this Project List. A User can add a new Project and delete a Project from this page. Clicking on the "Climb Info" will take the User to more info about that specific Project.
+
+![Project List Page](ProjectListPage.png)
+
+### Climb Info Page
+
+In the Climb Info Page a User will be able to see and update the info for this specific climb. They can add a link to any external resources they think will help with this climb. A User can link any number of their Workout Plans to this climb, and then navigate to this plan by clicking on the "Go to Workout Plan" link. Lastly they can upload any photos to this specific climb page. 
+
+![Climb Info 1](ClimbInfo1.png) ![Climb Info 2](ClimbInfo2.png) ![Climb Info 3](ClimbInfo3.png)
+
+### Workout Plan Page
+
+Users can create a new workout plan, delete current plans or edit the basic info for the plan. Clicking on the "Workout Sessions" will bring the User to a list of all the specific sessions for that plan.
+
+![Workout Plan Page](WorkoutPlanPage.png)
+
+### Workout Session Page
+
+From this page Users can see all the specific sessions associated with the Workout Plan. They can create a new session, edit the basic info and delete the session. To navigate to exercises associated with that session, Users will click on the "Session Exercises"
+
+![Workout Session Page](WorkoutSessionPage.png)
+
+### Workout Exercises
+
+In the Workout Exercises page a User can see all exercises and climbing drills for the specific workout session. A user can add a new exercise or drill, and can edit and delete existing exercises and drills.
+ 
+![Fitness Exercise Page](FitnessExercises1.png) ![Fitness Exercise Page](FitnessExercises2.png)
 
 <!---
 This README would normally document whatever steps are necessary to get the
